@@ -1,0 +1,93 @@
+<html>
+<head>
+<style>
+a:hover {
+  color: black ;
+  background-color: gray ;
+}
+
+
+</style>
+<style>
+.description {
+  color: Blue;
+}
+
+.description em {
+   color: black; font-style: normal; 
+}
+</style>
+</head>
+<body bgcolor="dimgray">
+
+<center><div id="layer1" style="width:800; height:1200; z-index:1; padding:px; border: #000000 2px solid; border-color:black;background-color:white ; text-align: left; ">
+
+
+
+
+
+<div id="head" style="width:800; height:50; z-index:1; padding:0px; border: #000000 2px solid; border-color:gray;background-color:black ; text-align: center; ">
+<p style="text-align:left">
+ <font size="+2"><b><u><p style="color:red">SmerfApi Documentation</p></b></u></font>
+</div>
+
+
+ <font size="2">
+<br>
+<center><a href="Help.html"><b> Home </b></a></center><br>
+
+
+
+
+
+ <font size="3"> <center><b><p style="color:blue;">  Getting Started</p></b></center>
+	
+
+	
+	*<b><u>Defaults</u></b>
+<br>
+<font size="2"><br>
+&emsp; All Gadget have a default setting. Setting default colors,sizes and positions for gadget Can save time when creating new gadgets.
+For example, A if the defaut color  for a Api_Commands is set to blue all Api_Commandss will be set with the color blue when created.
+Defaults are not part of the api language because it is much quicker to edit each type indevidually. The <b><font color="Blue">#include</font></b>. File named "Default can be edited manually."
+
+
+<br>
+<br>
+	<b><p class=description>&nbsp GetApi_CommandsBgImage(ID)</b> &nbsp  <em> Returns Background ID or -1.</em></p>
+	<b><p class=description>&nbsp GetApi_CommandsHeight(ID)</b> &nbsp  <em> Returns Height.</em></p>
+	<b><p class=description>&nbsp GetApi_CommandsWidth(ID)</b> &nbsp  <em> Returns Width.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsBgColor(ID,Color)</b> &nbsp  <em> `Accepts color from makecolor(),Sets Background color of sprite, Accepts Alpha value.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsBGImage(ID,ImageID)</b> &nbsp  <em>  `Accepts Integer, Sets Background image.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsBorderWidth(ID,Width)</b> &nbsp  <em> `Accepts Integer, Sets Border Width.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsDragAndDrop(ID,Bool)</b> &nbsp  <em> ` Accepts Integer 1-0, 1 enalbes Api_Commands to be dropped onto other gadgets, 0 false.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsHoverState(ID)</b> &nbsp  <em> Returns 1 if Api_Commands is  being hovered,  else 0.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsVisible(ID,Boolean)</b> &nbsp  <em> `Sets Api_Commands visible or hidden 1 visible, 0 hidden.</em></p>
+	
+	<b><p class=description>&nbsp GetApi_CommandsText(ID)</b> &nbsp  <em> Returns Text String or -1</em></p> 
+	<b><p class=description>&nbsp SetApi_CommandsDepth(ID,Depth)</b> &nbsp  <em> Accepts Integer, Forces Api_Commands to add or subtract depth to its depth sorting.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsHeight(ID,Height)</b> &nbsp  <em> `Accepts integer sets the height.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsWidth(ID,Width)</b> &nbsp  <em> Accepts integer sets the width.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsSize(ID,Width,Height)</b> &nbsp  <em> Accepts integer sets the width and height.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsPaddingWidth(ID,Width)</b> &nbsp  <em> `Accepts Integer, Sets Padding Width.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsPaddingColor(ID,Color)</b> &nbsp  <em>`Accepts color from makecolor(),Sets Padding color of sprite, Accepts Alpha value.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsBorderColor(ID,Color)</b> &nbsp  <em>`Accepts color from makecolor(),Sets Border color of sprite, Accepts Alpha value.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsColor(ID,Integer)</b> &nbsp  <em> `Accepts color from makecolor(), Sets entire sprite to specified color.</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsAlpha(ID,AlphaValue)</b> &nbsp  <em> `Accepts integer 0-255, Sets entire Sprite to the specified alpha value</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsEditMode(ID,Bool)</b> &nbsp  <em>	`Accepts Integer 1-0, overides settings enables all api features,"Api_Commands action will be disabled while in edit mode"</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsToolTip(ID,String)</b> &nbsp  <em> Accepts String, Sets Api_Commands to generate and destroy a tooltip preview on hover.
+								Hover Must be enabled see SetApi_CommandsActivateHover(ID,Bool)</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsDrag(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Dragging</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsResize(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Resizing</em></p>
+	<b><p class=description>&nbspSetApi_CommandsActivateMode(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1, (1) Enables Hover to activate, "0"
+									Default Behavior</em></p>
+	<b><p class=description>&nbsp SetApi_CommandsHighlight(ID,Bool)</b> &nbsp  <em> `Accepts Integer 1-0, Enables Highlighting</em></p>
+
+
+</div>
+</div></center>
+
+	
+
+
+	

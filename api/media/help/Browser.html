@@ -1,0 +1,76 @@
+<html>
+<head>
+<style>
+a:hover {
+  color: black ;
+  background-color: gray ;
+}
+
+
+</style>
+<style>
+.description {
+  color: Blue;
+}
+
+.description em {
+   color: black; font-style: normal; 
+}
+</style>
+</head>
+<body bgcolor="dimgray">
+
+<center>
+<div id="layer1" style="width:100%; height:1200; z-index:1; padding:px; border: #000000 2px solid; border-color:black;background-color:white ; text-align: left; ">
+	<div id="head" style="width:100%; height:50; z-index:1; padding:0px; border: #000000 2px solid; border-color:gray;background-color:black ; text-align: center; ">
+	</div>
+
+	<font size="2">
+	<br>
+	<center><a href="Help.html"><b> Home </b></a></center><br>
+		<font size="3">
+	<center><b>                                                               <p style="color:blue;">Browser Gadget</p>
+	</b>
+	</center>
+	<br>
+	<font size="2"><br>The Browser Gadget Allows a real time preview of images. It can open image files and generate a preview image or load a model file and generate an image preview from it. It accepts an image array to be passed into the gadget or it can populate images internally after findfiles(Browser) has been call witht he browser id as its target. It has 2 modes ,preview mode and text mode. Text Mode creates and array of interactive button text objects and preview mode creates interactive button previews. clicking the button will return the current string of the image or text that the object holds. Bowsers using the image array source "not internal will return an image index"
+	&emsp; 
+	<br>
+	<br>
+
+	<b><p class=description>&nbspSetBrowserActivateMode(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1, (1) Enables Hover to activate, "0"
+									Default Behavior</em></p>
+	<b><p class=description>&nbsp SetBrowserAlpha(ID,AlphaValue)</b> &nbsp  <em> `Accepts integer 0-255, Sets entire Sprite to the specified alpha value</em></p>
+	<b><p class=description>&nbsp SetBrowserBgColor(ID,Color)</b> &nbsp  <em> `Accepts color from makecolor(),Sets Background color of sprite, Accepts Alpha value.</em></p>
+	<b><p class=description>&nbsp SetBrowserBGImage(ID,ImageID)</b> &nbsp  <em>  `Accepts Integer, Sets Background image.</em></p>
+	<b><p class=description>&nbsp SetBrowserBorderColor(ID,Color)</b> &nbsp  <em>`Accepts color from makecolor(),Sets Border color of sprite, Accepts Alpha value.</em></p>
+	<b><p class=description>&nbsp SetBrowserBorderWidth(ID,Width)</b> &nbsp  <em> `Accepts Integer, Sets Border Width.</em></p>
+	<b><p class=description>&nbsp GetBrowserBgImage(ID)</b> &nbsp  <em> Returns Background ID or -1.</em></p>
+	<b><p class=description>&nbsp SetBrowserColor(ID,Integer)</b> &nbsp  <em> `Accepts color from makecolor(), Sets entire sprite to specified color.</em></p>
+	<b><p class=description>&nbsp SetBrowserDepth(ID,Depth)</b> &nbsp  <em> Accepts Integer, Forces Browser to add or subtract depth to its depth sorting.</em></p>
+	<b><p class=description>&nbsp SetBrowserDrag(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Dragging</em></p>
+	<b><p class=description>&nbsp SetBrowserDragAndDrop(ID,Bool)</b> &nbsp  <em> ` Accepts Integer 1-0, 1 enalbes Browser to be dropped onto other gadgets, 0 false.</em></p>
+	<b><p class=description>&nbsp SetBrowserEditMode(ID,Bool)</b> &nbsp  <em>	`Accepts Integer 1-0, overides settings enables all api features,"Browser action will be disabled while in edit mode"</em></p>
+	<b><p class=description>&nbsp GetBrowserHeight(ID)</b> &nbsp  <em> Returns Height.</em></p>
+	<b><p class=description>&nbsp SetBrowserHighlight(ID,Bool)</b> &nbsp  <em> `Accepts Integer 1-0, Enables Highlighting</em></p>
+	<b><p class=description>&nbsp SetBrowserHoverState(ID)</b> &nbsp  <em> Returns 1 if Browser is  being hovered,  else 0.</em></p>
+	<b><p class=description>&nbsp SetBrowserPaddingWidth(ID,Width)</b> &nbsp  <em> `Accepts Integer, Sets Padding Width.</em></p>
+	<b><p class=description>&nbsp SetBrowserPaddingColor(ID,Color)</b> &nbsp  <em>`Accepts color from makecolor(),Sets Padding color of sprite, Accepts Alpha value.</em></p>
+	<b><p class=description>&nbsp SetBrowserResize(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Resizing</em></p>
+	<b><p class=description>&nbsp SetBrowserSize(ID,Width,Height)</b> &nbsp  <em> Accepts integer sets the width and height.</em></p>
+	<b><p class=description>&nbsp GetBrowserText(ID)</b> &nbsp  <em> Returns Text String or -1</em></p> 
+	<b><p class=description>&nbsp SetBrowserToolTip(ID,String)</b> &nbsp  <em> Accepts String, Sets Browser to generate and destroy a tooltip preview on hover.
+								Hover Must be enabled see SetBrowserActivateHover(ID,Bool)</em></p>
+	<b><p class=description>&nbsp GetBrowserWidth(ID)</b> &nbsp  <em> Returns Width.</em></p>
+	<b><p class=description>&nbsp SetBrowserVisible(ID,Boolean)</b> &nbsp  <em> `Sets Browser visible or hidden 1 visible, 0 hidden.</em></p>
+	<b><p class=description>&nbsp SetBrowserModeIcon(id)</b> &nbsp  <em> `     </em></p>
+	<b><p class=description>&nbsp SetBrowserModeText(id)</b> &nbsp  <em> `           </em></p>
+	<b><p class=description>&nbsp SetBrowserImageSource(ID,ID_Array as integer[])</b> &nbsp  <em> `             </em></p>
+	<b><p class=description>&nbsp SetBrowserTextSource(ID,UsePass_TYPE)</b> &nbsp  <em> `             </em></p>
+	<b><p class=description>&nbsp GetBrowserString(BrowseID)</b> &nbsp  <em> `                    </em></p>
+	<b><p class=description>&nbsp SetBrowserModePreview(id)</b> &nbsp  <em> `               </em></p>
+	<b><p class=description>&nbsp updateBrowser</b> &nbsp  <em> `                    </em></p>
+</div>
+</center>
+
+
