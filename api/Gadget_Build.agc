@@ -121,7 +121,6 @@ function AddGadget(Kind)`calls config.agc
 		If kind=9 then BuildDefaultBrowser()
 		If kind=10 then BuildDefaultScrollBar2()
 		If kind=11 then BuildDefaultViewport()
-		
 endfunction
 
 
