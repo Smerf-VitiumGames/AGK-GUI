@@ -44,45 +44,35 @@ a:hover {
 	
 
 	
-	*<b><u>Defaults</u></b>
+	<b><u>Defaults</u></b>
 <br>
-<font size="2"><br>
-&emsp; All Gadget have a default setting. Setting default colors,sizes and positions for gadget Can save time when creating new gadgets.
-For example, A if the defaut color  for a Window is set to blue all Windows will be set with the color blue when created.
-Defaults are not part of the api language because it is much quicker to edit each type indevidually. The <b><font color="Blue">#include</font></b>. File named "Default can be edited manually."
+
 
 
 <br>
 <br>
-	<b><p class=description>&nbsp GetWindowBgImage(ID)</b> &nbsp  <em> Returns Background ID or -1.</em></p>
-	<b><p class=description>&nbsp GetWindowHeight(ID)</b> &nbsp  <em> Returns Height.</em></p>
-	<b><p class=description>&nbsp GetWindowWidth(ID)</b> &nbsp  <em> Returns Width.</em></p>
-	<b><p class=description>&nbsp SetWindowBgColor(ID,Color)</b> &nbsp  <em> `Accepts color from makecolor(),Sets Background color of sprite, Accepts Alpha value.</em></p>
-	<b><p class=description>&nbsp SetWindowBGImage(ID,ImageID)</b> &nbsp  <em>  `Accepts Integer, Sets Background image.</em></p>
-	<b><p class=description>&nbsp SetWindowBorderWidth(ID,Width)</b> &nbsp  <em> `Accepts Integer, Sets Border Width.</em></p>
-	<b><p class=description>&nbsp SetWindowDragAndDrop(ID,Bool)</b> &nbsp  <em> ` Accepts Integer 1-0, 1 enalbes Window to be dropped onto other gadgets, 0 false.</em></p>
-	<b><p class=description>&nbsp SetWindowHoverState(ID)</b> &nbsp  <em> Returns 1 if Window is  being hovered,  else 0.</em></p>
-	<b><p class=description>&nbsp SetWindowVisible(ID,Boolean)</b> &nbsp  <em> `Sets Window visible or hidden 1 visible, 0 hidden.</em></p>
+<div>
+	&nbsp;&nbsp;Creating custom gadgets is a superior way to manage your programs but its is also  much more involved.<br>
+	&nbsp;&nbsp;There are 4 main ways to set up a program.
+	&nbsp;&nbsp;Templates, source code and gadgets and includes,
 	
-	<b><p class=description>&nbsp GetWindowText(ID)</b> &nbsp  <em> Returns Text String or -1</em></p> 
-	<b><p class=description>&nbsp SetWindowDepth(ID,Depth)</b> &nbsp  <em> Accepts Integer, Forces Window to add or subtract depth to its depth sorting.</em></p>
-	<b><p class=description>&nbsp SetWindowHeight(ID,Height)</b> &nbsp  <em> `Accepts integer sets the height.</em></p>
-	<b><p class=description>&nbsp SetWindowWidth(ID,Width)</b> &nbsp  <em> Accepts integer sets the width.</em></p>
-	<b><p class=description>&nbsp SetWindowSize(ID,Width,Height)</b> &nbsp  <em> Accepts integer sets the width and height.</em></p>
-	<b><p class=description>&nbsp SetWindowPaddingWidth(ID,Width)</b> &nbsp  <em> `Accepts Integer, Sets Padding Width.</em></p>
-	<b><p class=description>&nbsp SetWindowPaddingColor(ID,Color)</b> &nbsp  <em>`Accepts color from makecolor(),Sets Padding color of sprite, Accepts Alpha value.</em></p>
-	<b><p class=description>&nbsp SetWindowBorderColor(ID,Color)</b> &nbsp  <em>`Accepts color from makecolor(),Sets Border color of sprite, Accepts Alpha value.</em></p>
-	<b><p class=description>&nbsp SetWindowColor(ID,Integer)</b> &nbsp  <em> `Accepts color from makecolor(), Sets entire sprite to specified color.</em></p>
-	<b><p class=description>&nbsp SetWindowAlpha(ID,AlphaValue)</b> &nbsp  <em> `Accepts integer 0-255, Sets entire Sprite to the specified alpha value</em></p>
-	<b><p class=description>&nbsp SetWindowEditMode(ID,Bool)</b> &nbsp  <em>	`Accepts Integer 1-0, overides settings enables all api features,"Window action will be disabled while in edit mode"</em></p>
-	<b><p class=description>&nbsp SetWindowToolTip(ID,String)</b> &nbsp  <em> Accepts String, Sets Window to generate and destroy a tooltip preview on hover.
-								Hover Must be enabled see SetWindowActivateHover(ID,Bool)</em></p>
-	<b><p class=description>&nbsp SetWindowDrag(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Dragging</em></p>
-	<b><p class=description>&nbsp SetWindowResize(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Resizing</em></p>
-	<b><p class=description>&nbspSetWindowActivateMode(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1, (1) Enables Hover to activate, "0"
-									Default Behavior</em></p>
-	<b><p class=description>&nbsp SetWindowHighlight(ID,Bool)</b> &nbsp  <em> `Accepts Integer 1-0, Enables Highlighting</em></p>
-
+	&nbsp;&nbsp;Gui's tend to get complex<br> 
+	&nbsp;&nbsp;and diffcicult to manage very quicky with multiple line for color size position ect.<br>
+	&nbsp;&nbsp;So I reccomend building a menu  in an include file and running it in the templates file.<br>
+	
+	
+	
+	<p>Principles.<br>
+	<b> Defaults.</b><br>
+	&nbsp;&nbsp;Each type of gadget has default vales located in the Defaults file. It is highly recomended to set the default values that<br>
+	&nbsp;&nbsp;you would like each type of gadget to start with. These do not set them in stone each gadget can be altered at any time, but <br>
+	&nbsp;&nbsp;this saves time on color positioning setting &nbsp;images and padding ect.
+	<br>
+	&nbsp;&nbsp;For example, A if the defaut color  for a Window is set to blue all Windows will be set with the color blue when created.<br>
+&nbsp;&nbsp;Defaults are not part of the api language because it is much quicker to edit each type indevidually. The <b><font color="Blue">#include</font>
+</b>.<br> &nbsp;&nbsp;File named "Default can be edited manually.
+	
+	
 
 </div>
 </div></center>
