@@ -74,26 +74,9 @@ FILE_21=templates.agc;-1
 FILE_22=test_GUI.agc;-1
 
 [files]
-FILE_NAME_0=0;API_Colors.agc;681;0
-FILE_NAME_1=0;API_Mouse.agc;67;1
-FILE_NAME_2=0;Command_API.agc;66;2
-FILE_NAME_3=0;Command_Browser.agc;17;3
-FILE_NAME_4=0;Command_Button.agc;3;4
-FILE_NAME_5=0;Command_Camera.agc;178;5
-FILE_NAME_6=0;Command_Label.agc;0;6
-FILE_NAME_7=0;Command_Slider.agc;13;7
-FILE_NAME_8=0;Command_TextBox.agc;33;8
-FILE_NAME_9=0;Command_Window.agc;15;9
-FILE_NAME_10=0;DEFAULTS.agc;51;10
-FILE_NAME_11=0;DropMenu.agc;395;11
-FILE_NAME_12=0;Gadget_Build.agc;80;12
-FILE_NAME_13=0;Gadget_DragEdge.agc;79;13
-FILE_NAME_14=0;Gadget_Handel.agc;33;14
-FILE_NAME_15=0;Gadget_TextBox.agc;13;15
-FILE_NAME_16=0;INIT_Main.agc;200;16
-FILE_NAME_17=0;main.agc;0;17
-FILE_NAME_18=1;templates.agc;44;18
-FILE_NAME_19=0;test_GUI.agc;26;19
+FILE_NAME_0=0;API_Mouse.agc;18;0
+FILE_NAME_1=0;INIT_Main.agc;0;1
+FILE_NAME_2=1;main.agc;0;2
 
 [watchvariables]
 watch_variable=@Version;
