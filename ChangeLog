@@ -1,1 +1,8 @@
 not empty
+
+12/26/2022
+
+Added BuildSliders() to buildgadget.agc
+added get set commands for sliders in command_sliders
+
+
