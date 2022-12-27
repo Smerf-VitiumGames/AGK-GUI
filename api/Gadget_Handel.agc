@@ -299,4 +299,22 @@ function createCursor(var)
 	Endif
 endfunction
 
+function RunSlider()
+	if api.active>-1
+		id=api.active
+		SpriteWidth=api.gadget[id].WIDth
+		if api.gadget[id].kind=8
+		if api.mouse.LeftState=1 and api.Spritehit=api.gadget[api.active].SpriteID and api.DragEdge=0
+			 now# = api.mouse.x-api.gadget[id].PositionX
+			percent#=round((now#/SpriteWidth)*100)
+			api.gadget[id].NowRange=percent#
+			DrawGadget(8,id)
+			print(percent#)
+	
+		endif
+		endif
+	endif
+endfunction
+
+
 

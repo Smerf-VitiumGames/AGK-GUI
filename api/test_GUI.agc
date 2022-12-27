@@ -97,7 +97,7 @@ function load_gui_1()
 	addchild(ViewMouseOptions,gui.bar_left)
 	setBrowserPosition(ViewMouseOptions,4,316)
 	setbrowsersize(ViewMouseOptions,140,400)
-	
+	BorderAplphaSlider=MakeSlider()
 	MakeColorPicker()
 endfunction
 		
@@ -236,7 +236,7 @@ MakeToolBar()
 `Alpha
 	BorderAplphaSlider=MakeSlider()
 	SetSliderSize(BorderAplphaSlider,100,4)
-	SetSliderPosition(BorderAplphaSlider,255,89)
+	SetSliderPosition(BorderAplphaSlider,355,189)
 	AddChild(BorderAplphaSlider,bgwin)
 
 `Appearance Label
@@ -252,6 +252,7 @@ endfunction
 
 
 function rungui1()
+	`MakeSlider()
 	SetCameraRotationX(0,GetCameraRotationX(0) +getpointerMovey())
 	SetCameraRotationY(0,GetCameraRotationY(0) -getpointerMoveX())
 	

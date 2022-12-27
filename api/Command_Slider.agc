@@ -45,6 +45,34 @@ function SetSliderPosition(ID,x,y)
 	Endif
 endfunction
 
+function GetSliderValue(ID)
+	local ret as float
+	id=getid(id)
+	if API.gadget.length >= id
+		ret=api.gadget[id].NowRange
+	endif
+endfunction ret
+
+
+function SetSliderValue(ID,Value as float)
+	id=getid(id)
+	if API.gadget.length >= id
+		api.gadget[id].NowRange=Value
+		DrawGadget(8,id)
+	endif
+endfunction 
+
+function SetSliderRange(ID,Low as float,High as float)
+	id=getid(id)
+	if API.gadget.length >= id
+		api.gadget[id].rangeLow   =Low
+		api.gadget[id].RangeHigh  =High
+		DrawGadget(8,id)
+	endif
+endfunction 
+
+
+
 
 function SetSliderSize(ID,Width,Height)
 	id=getid(id)

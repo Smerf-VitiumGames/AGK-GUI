@@ -26,7 +26,8 @@ function INIT_API()
 	API.Gui.Button=LoadImage		(api.path+"api/media/smerf_api/"+"btn.png")
 	API.Gui.folder=LoadImage		(api.path+"api/media/smerf_api/"+"folder.png")
 	API.Gui.background=LoadImage	(api.path+"api/media/smerf_api/"+"bg.png")
-	API.Gui.SlIDeBar=LoadImage	(api.path+"api/media/smerf_api/"+"SlIDeBar.png")
+	API.Gui.SlideBar=LoadImage	(api.path+"api/media/smerf_api/"+"SlideBar.png")
+	API.Gui.SlideBTN=LoadImage	(api.path+"api/media/smerf_api/"+"SlideButton.png")
 	API.Gui.input=LoadImage		(api.path+"api/media/smerf_api/"+"input.png")
 	API.Gui.edit=LoadImage		(api.path+"api/media/smerf_api/"+"editbox.png")
 	API.Gui.checkbox=LoadImage	(api.path+"api/media/smerf_api/"+"checkbox.png")
@@ -105,6 +106,7 @@ endfunction
 type ApiGui //Media
 	background as integer //media
 	SlideBar as integer//media
+	SlideBTN as integer
 	folder as integer //media
 	Button as integer //media
 	vArrow as integer //media
@@ -193,6 +195,7 @@ function RUN_API()`RUN RUN RUN RUN
 	API.Mouse.y=getpointery()
 	resolution(0)
 	RunTextBox()
+	RunSlider()
 	RunMouse()
 	RunMenu()
 RunTemplates()

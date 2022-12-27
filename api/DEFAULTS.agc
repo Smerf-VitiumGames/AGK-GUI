@@ -472,13 +472,14 @@ Function BuildDefaultSlider()// Future functionality type this insert defaults b
 	Temp.PositionX=100
 	Temp.PositionY=100
 	Temp.Width=100
-	Temp.Height=8
+	Temp.Height=20
 	Temp.Alpha=255
 	Temp.TextAlpha=255
 	Temp.BgAlpha=255
 	Temp.borderAlpha=155
 	Temp.PadAlpha=155
 	Temp.BgImageID=API.Gui.Slidebar
+	Temp.SecondImageID=api.gui.SlideBTN
 	Temp.Padcolor=API.Color.darkgray
 	Temp.PadWidth=0
 	Temp.BorderWidth=0
@@ -495,7 +496,7 @@ Function BuildDefaultSlider()// Future functionality type this insert defaults b
 	Temp.ActiveBool=1
 	Temp.ToolTip=""
 	Temp.DragBool=1
-	Temp.ReSizeBool=0
+	Temp.ReSizeBool=1
 	Temp.MinimizeBool=0
 	Temp.MaximizeBool=0
 	Temp.CloseBool=0

@@ -116,8 +116,8 @@ function AddGadget(Kind)`calls config.agc
 		If kind=4 then BuildDefaultScrollBar()
 		If kind=5 then BuildDefaultTextBox()
 		If kind=6 then BuildDefaultLabel()
-		If kind=7 then BuildDefaultDivIDer()
-		If kind=8 then BuildDefaultSlIDer()
+		If kind=7 then BuildDefaultDivider()
+		If kind=8 then BuildDefaultSlider()
 		If kind=9 then BuildDefaultBrowser()
 		If kind=10 then BuildDefaultScrollBar2()
 		If kind=11 then BuildDefaultViewport()
@@ -141,7 +141,6 @@ Function DrawGadget(kind,Remake)`remkake=array
 	depth=API.Gadget[ID].Depth
 	pw=API.Gadget[ID].PadWIDth
 	Bw=API.Gadget[ID].BorderWIDth
-	Bw=API.Gadget[ID].BorderWIDth
 	SizeX=API.Gadget[ID].WIDth
 	SizeY=API.Gadget[ID].Height
 	BorderColor=API.Gadget[ID].Bordercolor
@@ -157,10 +156,7 @@ Function DrawGadget(kind,Remake)`remkake=array
 	
 	col=Bordercolor
 	col2=Padcolor
-	If API.Gadget[ID].kind=8
-		`SizeY=API.Gadget[ID].Height+API.Gadget[ID].BuiltInIntParam[1]-API.Gadget[ID].Height
-		SlIDeroffSet=(API.Gadget[ID].BuiltInIntParam[1]/2)	
-	Endif
+	
 
 	If API.Gadget[ID].BgImageID >=0 //load Bg Image
 		RenderViewPort(ID)
@@ -170,17 +166,31 @@ Function DrawGadget(kind,Remake)`remkake=array
 	If API.Gadget[ID].BgImageID < 0 //load Bg Image
 		drawbox(0,0,SizeX-bw-pw,SizeY-bw-pw,Bgcolor,Bgcolor,Bgcolor,Bgcolor,1)//Bg
 		update(0)
-		DeleteBgImage=getImage(0,0,SizeX-bw-pw,SizeY-bw-pw)
+		DeleteBgImage=getImage(0,0,SizeX-bw-pw,SizeY-bw-pw+SlIDeroffSet)
 		BgSpriteID=createSprite(DeleteBgImage)`do i need to delete? check back later 
 	Endif
+
+
+
+
+	
+	
 	SetSpriteSize(BgSpriteID,SizeX-(bw+bw)-(pw+pw),SizeY-(bw+bw)-(pw+pw))
-	SetSpriteposition(BgSpriteID,pw+bw,bw+pw+SlIDeroffSet)
+	
+	if api.gadget[id].kind=8 
+		SetSpriteSize(BgSpriteID, SizeX-(bw+bw)-(pw+pw),SizeY/2)
+		
+		 Slideroffset= round((api.gadget[id].Height/4))
+	endif
+	
+	SetSpriteposition(BgSpriteID,pw+bw,bw+pw+slideroffset)
 	SetSpriteTransparency(BgSpriteID,1)
 	SetSpriteColorAlpha(BgSpriteID,bgcolora)
+
 	drawSprite(BgSpriteID)
 	deleteSprite(BgSpriteID)
 	If GetImageExists(DeleteBgImage)=1 then DeleteImage(DeleteBgImage)
-	buildSlIDer(ID,SizeY+(SlIDeroffSet*2))
+	buildSlider(ID)
 	update(0)
 
 	DrawGadgetText(ID)
@@ -218,7 +228,8 @@ Function DrawGadget(kind,Remake)`remkake=array
 	`drawbox(bw+pw,bw+pw,SizeX-bw-pw,SizeY-bw-pw,Bgcolor,Bgcolor,Bgcolor,Bgcolor,1)//Bg
 	`Endif
 	`update(0)
-	API.Gadget[ID].ImageID=getImage(0,0,SizeX,SizeY+SlIDeroffSet+SlIDeroffSet)
+	
+	API.Gadget[ID].ImageID=getImage(0,0,SizeX,SizeY)
 	ClearScreen()
 	If SpriteID <=0
 		SpriteID=CreateSprite(API.Gadget[ID].ImageID)
@@ -227,7 +238,7 @@ Function DrawGadget(kind,Remake)`remkake=array
 	Endif
 	SetSpriteImage(API.Gadget[ID].SpriteID,API.Gadget[ID].ImageID)
 	SetSpriteSize(SpriteID,SizeX,SizeY+1)
-	SetSpriteTransparency(API.Gadget[ID].SpriteID,1)
+	`SetSpriteTransparency(API.Gadget[ID].SpriteID,1)
 	SetSpritePosition(API.Gadget[ID].SpriteID,API.Gadget[ID].PositionX,API.Gadget[ID].PositionY)
 endfunction ID
 
@@ -371,42 +382,42 @@ function editBoxText()
 endfunction
 
 
-function buildSlIDer(ID,y as Float)
+function BuildSlider(ID)
+	
 	If API.Gadget[ID].kind=8
+		
 		low#=API.Gadget[ID].rangeLow
 		High#=API.Gadget[ID].RangeHigh
 		Now#=API.Gadget[ID].NowRange
-		g=MakeColor(128,128,128,150)
-		b=MakeColor(28,28,28,150)
-		`WIDth=0,Height,1,xpos=2
-		WIDth#=API.Gadget[ID].BuiltInIntParam[0]
-		Height#=API.Gadget[ID].BuiltInIntParam[1]
-		If API.Gadget[ID].WIDth <4 then API.Gadget[ID].WIDth=4
-		range#=high#-low#
-		SpriteHeight#=API.Gadget[ID].Height
+
+
+		Height2=API.Gadget[ID].BuiltInIntParam[1]
+		Height1=api.gadget[id].height
+
+		range#=abs(high#-low#)
 		SpriteWIDth#=API.Gadget[ID].WIDth
 		percent#=(now#*SpriteWIDth#)/100
-		x1#=650*percent#`calculates percent of the bigger number based on SlIDer number Next figure out  how to position SlIDer
-		If API.Gadget[ID].Height < 4 then API.Gadget[ID].Height=4
-		y1#=API.Gadget[ID].Height/2-(Height#/2)
-		y2#=(Height# *SpriteHeight#)/100
 		
-		`DrawEllipse(percent#,y/2 ,((WIDth#*SpriteWIDth#)/100),((WIDth#*SpriteWIDth#)/50)  ,b,b,1)
-		Temp=createSprite(API.Gui.SlIDer)
-		c=API.color.Bluegreen
-		r=GetColorRed(c)
-		g=GetColorGreen(c)
-		b=GetColorBlue(c)
-		SetSpritecolor(Temp,r,g,b,255)
-		`non proportional scaling
-		SetSpriteSize(Temp,WIDth# ,y)
+		
+
+		
+		`api.gadget[id].
+		Temp=createSprite(api.gadget[id].SecondImageID)
+		pw=API.Gadget[ID].PadWIDth
+		Bw=API.Gadget[ID].BorderWIDth
+
+		SetSpriteSize(Temp,  height1-(bw+bw)-(pw+pw)/2  -  (height2/2),  (height1-(bw+bw)-(pw+pw)/2  -  (height2/2)    ))
 		`even scaling enable
-		`SetSpriteSize(Temp,WIDth#+y/3 ,y)
-		SetSpriteposition(Temp,percent#-GetSpriteWIDth(Temp)/2,y/2-GetSpriteHeight(Temp) /2)
+		size=GetSpriteHeight(temp)
+		SetSpriteposition(Temp,percent#-GetSpriteWIDth(Temp)/2, (height1/2)+bw+pw -(size/2) )
 		SetSpriteTransparency(Temp,1)
 		drawSprite(Temp)
 		deleteSprite(Temp)
+
+		
+		
 	Endif
+	
 endfunction
 
 
