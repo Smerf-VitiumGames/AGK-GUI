@@ -5,4 +5,9 @@ not empty
 Added BuildSliders() to buildgadget.agc
 added get set commands for sliders in command_sliders
 
+12/27/2022
+Updated Help files
+Updated api commands. added pickcolor get set rgb for pick color.
+added getCheckBoxState()
+
 
