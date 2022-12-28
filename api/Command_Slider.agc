@@ -30,7 +30,7 @@ function SetSliderBorderWidth(id,width)
 endfunction
 
 
-function setSliderTextSize(id,value)
+function SetSliderTextSize(id,value)
 	id=getID(id)
 	if API.gadget.length >= id then API.Gadget[id].TextSize=value
 endfunction
@@ -53,6 +53,11 @@ function GetSliderValue(ID)
 	endif
 endfunction ret
 
+`function SetSliderColor(id,colur) //sprite color
+`	local ret as float
+`	id=getid(id)
+`endfunction
+
 
 function SetSliderValue(ID,Value as float)
 	id=getid(id)
@@ -67,12 +72,9 @@ function SetSliderRange(ID,Low as float,High as float)
 	if API.gadget.length >= id
 		api.gadget[id].rangeLow   =Low
 		api.gadget[id].RangeHigh  =High
-		DrawGadget(8,id)
+		`DrawGadget(8,id)
 	endif
 endfunction 
-
-
-
 
 function SetSliderSize(ID,Width,Height)
 	id=getid(id)

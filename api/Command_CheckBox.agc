@@ -11,6 +11,15 @@ function SetCheckBoxState(ID,State)
 	Endif
 endfunction
 
+Function GetCheckBoxState(ID)
+	ID=getID(ID)
+	Local ret as integer
+	if API.Gadget.Length >= ID
+	ret=API.Gadget[ID].state
+	endif
+	
+endfunction ret
+
 function SetCheckBoxBorderWidth(ID,Width)
 	ID=getID(ID)`return array index
 	if API.Gadget.Length >= ID 
