@@ -84,7 +84,7 @@ function findEditLine(id)
 	deletetext(temp)
 
 	if API.mouse.y -API.gadget[API.active].PositionY -starty
-		`Print ( API.mouse.y -API.gadget[API.active].PositionY-starty )
+		Print (    ((API.mouse.y -API.gadget[API.active].PositionY -starty))/height       )
 	Endif
 endfunction
 

@@ -28,7 +28,7 @@ SetCameraPosition(1,0,0,-4)
 SetCameraRotation(1,0,0,0)
 sync()
 
-
+EnableDebugMessages(1)
 
 
 
@@ -40,24 +40,13 @@ sync()
 INIT_API()
 
 
-
 `try these guis out!
 load_gui_1()
 `load_gui_2()
 
 
 
-
-
-
-
-global colorpicker as colorpickertype
-
-
-
 do
-
-`print(colorpicker.red)
 
 RUN_API()
 Rungui1()

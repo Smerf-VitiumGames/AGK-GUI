@@ -77,14 +77,14 @@ function RunTemplates()
 
 		 	if FindTemplate("BTN_Color")=GetButtonPress()
 		 		pickcolor(getrawmousex(),getrawmousey())
-				setTextBoxString(FindTemplate("red") ,str(colorpicker.red))
-				setTextBoxString(FindTemplate("green") ,str(colorpicker.green))
-				setTextBoxString(FindTemplate("blue") ,str(colorpicker.blue))
+				setTextBoxString(FindTemplate("red") ,	str( getPickedColorred() ))
+				setTextBoxString(FindTemplate("green") ,	str( getPickedColorgreen() ))
+				setTextBoxString(FindTemplate("blue") ,	str( getPickedColorBlue() ))
 			endif
 			
 			if FindTemplate("BTN_Gradient")=GetButtonPress()
 		 		pickcolor(getrawmousex(),getrawmousey())
-		 		setTextBoxString(FindTemplate("lum") ,str(colorpicker.red))
+		 		setTextBoxString(FindTemplate("lum") ,str(getPickedColorRed()))
 			endif
 			
 
@@ -136,25 +136,4 @@ endfunction ret
 //COLOR Picker/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-type colorpickertype
-	red as integer
-	green as integer
-	blue as integer
-	alpha as integer
-endtype
 
-
-
-Function pickColor(X,Y)
-	render()
-    tImage=getImage(x,y,1,1)
-    tMemblock=CreateMemblockfromImage(tImage)
-    colorPicker.red=GetMemblockbyte(tMemblock,12)
-    colorPicker.green=GetMemblockbyte(tMemblock,13)
-    colorPicker.blue=GetMemblockbyte(tMemblock,14)
-   	colorPicker.alpha=GetMemblockbyte(tMemblock,15)
-
-    deletememblock(tMemblock)
-    deleteimage(tImage)
-    clearscreen()
-endfunction 

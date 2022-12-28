@@ -31,7 +31,9 @@ endtype
 BuilddropdownHighlighter()
 BuildDropDownMenu() 
 return
-remstart
+
+
+remstart    Enable and  screen relative components here adding a quque later
 function resolution()
 	screen_Height=GetWindowHeight()
 	screen_Width=GetWindowWidth()

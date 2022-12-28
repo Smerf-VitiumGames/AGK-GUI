@@ -55,6 +55,7 @@ type Toolbars
 endtype
 global toolbars
 type APIType
+	ColorPicker as Colorpickertype
 	camImage1 as integer
 	camImage2 as integer
 	CamImage3 as integer
