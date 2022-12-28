@@ -23,7 +23,6 @@ firebase_config_path=
 url_scheme=
 deep_link=
 arcore=0
-app_icon_new_path=
 
 [ipa_settings]
 app_name=
@@ -53,6 +52,7 @@ output_path=
 FILE_0=main.agc;-1
 
 [files]
+FILE_NAME_0=1;main.agc;13;0
 
 [watchvariables]
 
