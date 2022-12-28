@@ -20,6 +20,7 @@ function INIT_API()
 	#include "api/test_GUI.agc"
 	#include "api/Command_Camera.agc"
 	#include "api/templates.agc"
+	#include "api/system.agc"
 
 	API.Gui.vArrow=LoadImage		(api.path+"api/media/smerf_api/"+"varrow.png")
 	API.Gui.hArrow=LoadImage		(api.path+"api/media/smerf_api/"+"harrow.png")

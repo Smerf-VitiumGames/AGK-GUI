@@ -263,7 +263,8 @@ function RenderViewPort(ID)
 		If GetImageExists(API.Gadget[ID].BgImageID) > 0
 			deleteimage(API.Gadget[ID].BgImageID)
 		Endif
-		renderer=CreateRenderImage (API.Gadget[ID].wIDth,API.Gadget[ID].Height,0,1)
+		
+		renderer=CreateRenderImage (API.Gadget[ID].wIDth,API.Gadget[ID].Height,0,0)
 		Setcameraposition(1,api.cam[API.Gadget[ID].camIndex].PosX,api.cam[API.Gadget[ID].camIndex].PosY,api.cam[API.Gadget[ID].camIndex].PosZ)
 		SetCameraRotation(1,api.cam[API.Gadget[ID].camIndex].RotX, api.cam[API.Gadget[ID].camIndex].RotY, api.cam[API.Gadget[ID].camIndex].RotZ)
 		SetRenderToImage(renderer,0)

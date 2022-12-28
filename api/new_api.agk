@@ -23,6 +23,7 @@ firebase_config_path=
 url_scheme=
 deep_link=
 arcore=0
+app_icon_new_path=
 
 [ipa_settings]
 app_name=
@@ -72,23 +73,28 @@ FILE_19=INIT_Main.agc;-1
 FILE_20=main.agc;-1
 FILE_21=templates.agc;-1
 FILE_22=test_GUI.agc;-1
+FILE_23=system.agc;-1
 
 [files]
 FILE_NAME_0=0;API_Colors.agc;752;0
 FILE_NAME_1=0;API_Mouse.agc;18;1
-FILE_NAME_2=0;Command_Slider.agc;62;2
-FILE_NAME_3=0;Command_Window.agc;11;3
-FILE_NAME_4=0;DEFAULTS.agc;465;4
-FILE_NAME_5=0;DropMenu.agc;11;5
-FILE_NAME_6=0;Gadget_Build.agc;398;6
-FILE_NAME_7=0;Gadget_DragEdge.agc;77;7
-FILE_NAME_8=0;Gadget_Handel.agc;311;8
-FILE_NAME_9=0;Gadget_Scroll.agc;196;9
-FILE_NAME_10=0;Gadget_TextBox.agc;0;10
-FILE_NAME_11=0;INIT_Main.agc;149;11
-FILE_NAME_12=0;main.agc;22;12
-FILE_NAME_13=0;test_GUI.agc;99;13
+FILE_NAME_2=1;Command_Camera.agc;365;2
+FILE_NAME_3=0;Command_Slider.agc;62;3
+FILE_NAME_4=0;Command_Window.agc;11;4
+FILE_NAME_5=0;DEFAULTS.agc;465;5
+FILE_NAME_6=0;DropMenu.agc;11;6
+FILE_NAME_7=0;Gadget_Build.agc;8185;7
+FILE_NAME_8=0;Gadget_DragEdge.agc;77;8
+FILE_NAME_9=0;Gadget_Handel.agc;311;9
+FILE_NAME_10=0;Gadget_Scroll.agc;196;10
+FILE_NAME_11=0;Gadget_TextBox.agc;0;11
+FILE_NAME_12=0;INIT_Main.agc;21;12
+FILE_NAME_13=0;main.agc;22;13
+FILE_NAME_14=0;test_GUI.agc;99;14
+FILE_NAME_15=0;system.agc;125;15
 
 [watchvariables]
 watch_variable=@Version;
 
+[project]
+description=

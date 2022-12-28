@@ -18,7 +18,7 @@ SetSyncRate( 3000, 1 ) // 30fps instead of 60 to save battery
 SetScissor( 0,0,0,0 ) // use the maximum available screen space, no black borders
 UseNewDefaultFonts( 1 )
 setcamerarange(1,.1,1000)
-SetGenerateMipmaps(1)
+SetGenerateMipmaps(0)
 setAntialiasMode(4)
 SetAmbientColor(128,128,128)
 SetClearColor(64,64,64)

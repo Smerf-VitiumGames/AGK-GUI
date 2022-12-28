@@ -17,3 +17,22 @@ function Error(msg as string,Value)
 	endif
 endfunction
 
+
+function nextPowerof2(n)
+    if isPowerof2(n+1)=0
+        exitfunction nextPowerof2(n+1)
+    endif  
+endfunction n+1
+ 
+function isPowerof2(n)
+   //condition to check whether number is power of two or not
+   //performing bitwise operation
+   if(n <> 0) and ((n &&(n - 1)) = 0)
+      exitfunction 1
+ 
+   else
+      exitfunction 0
+ 
+   endif
+endfunction 1
+

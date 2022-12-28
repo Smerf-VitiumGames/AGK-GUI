@@ -11,7 +11,7 @@ function MakeCamera(ID,Title as string)
 	ret=DrawGadget(11,-1)
 	api.cam[ID].GadgetID=ret
 	api.gadget[ret].camIndex=ID
-	API.gadget[ret].BgImageID= CreateRenderImage(100,100,0,1)
+	API.gadget[ret].BgImageID= CreateRenderImage(256,256,0,0)
 	SetLabelText(API.Gadget[ret].ID,Title)
 	DrawGadget(11,ret)
 endfunction API.Gadget[ret].ID
