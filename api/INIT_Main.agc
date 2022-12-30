@@ -55,6 +55,8 @@ type Toolbars
 endtype
 global toolbars
 type APIType
+	CursorPosx as Integer
+	CursorPosY as integer
 	ColorPicker as Colorpickertype
 	camImage1 as integer
 	camImage2 as integer
@@ -219,6 +221,7 @@ endfunction
 
 function ApiSync()
 	API.ButtonPressed=-1
+	api.mouse.clicked=-1
 	sync()
 endfunction
 

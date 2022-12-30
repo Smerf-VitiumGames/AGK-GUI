@@ -23,7 +23,7 @@ endfunction
 
 function GetInput(i)
 	findEditLine(i)
-	`BlinkCursor()
+	BlinkCursor()
 	`if androID
 	`Endif
 	if GetRawKeyState(62)=1
@@ -36,18 +36,23 @@ function GetInput(i)
 	if API.KeyPress >0 and getrawkeypressed(API.KeyPress)=0 `key was down now is up
 		`reSetkey
 		char=API.keypress
-		
-		if char<>8
+
+		if char<>8 
 			char=findascii(char)
 		Endif
 		if char=8 `shift chars
-			API.Gadget[i].TextStr[0]= left( API.Gadget[i].TextStr[0],  len(API.Gadget[i].Textstr[0])    -1)
+			API.Gadget[i].TextStr[api.CursorPosY]= left( API.Gadget[i].TextStr[api.CursorPosY],  len(API.Gadget[i].Textstr[api.CursorPosY])    -1)
 		Endif
 
-		IF CHAR <> 8
-			
-			API.Gadget[i].TextStr[0]=API.Gadget[i].Textstr[0]+ chr(char)
+		IF CHAR <> 8 
+			API.Gadget[i].TextStr[api.CursorPosY]=API.Gadget[i].Textstr[api.CursorPosY]+ chr(char)
 		Endif
+		if char=38 then end
+		if char=13`enter
+			API.Gadget[i].TextStr.insert("")
+			api.CursorPosY=api.CursorPosY+1
+			api.CursorPosx=1
+		endif
 		API.KeyPress=0
 		DrawGadget(5,i)
 	Endif
@@ -74,6 +79,8 @@ function findAscii(char)
 	next
 endfunction char
 
+
+//determines line position
 function findEditLine(id)
 	startX=API.gadget[id].Textx
 	startY=API.gadget[id].Texty
@@ -81,11 +88,19 @@ function findEditLine(id)
 	temp=createtext("s")
 	SetTextSize(temp,size)
 	Height=GetTextTotalHeight(temp)
+	width=GetTextTotalWidth(temp)
 	deletetext(temp)
 
-	if API.mouse.y -API.gadget[API.active].PositionY -starty
-		Print (    ((API.mouse.y -API.gadget[API.active].PositionY -starty))/height       )
-	Endif
+	`if API.mouse.y -API.gadget[API.active].PositionY -starty 
+	
+		temp= (API.mouse.y -API.gadget[API.active].PositionY -starty)/height 
+		if temp <= API.gadget[API.active].textstr.length and temp>=0 and api.mouse.Clicked>0
+			api.CursorPosY =temp
+		endif    
+		
+		
+		`if 
+	`Endif
 endfunction
 
 
@@ -102,3 +117,8 @@ function SetTextBoxToStrings()
 endfunction
 function Markup() `called from  gadget_build
 endfunction
+
+function BlinkCursor()
+	
+endfunction
+

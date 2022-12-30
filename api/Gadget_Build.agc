@@ -291,7 +291,7 @@ endfunction
  	
  	If API.Gadget[ID].Textstr.Length > -1
 	 	For i = 0 to API.Gadget[ID].Textstr.Length
-		 	TempText=createText(API.Gadget[ID].Textstr[0])
+		 	TempText=createText(API.Gadget[ID].Textstr[i])
 		 	`SetTextTransparency(TempText,2 ) 
 		 	`SetTextFont(TempText,API.Gadget[ID].Textfont)
 			SetTextSize(TempText,API.Gadget[ID].TextSize)
@@ -305,13 +305,14 @@ endfunction
 			x=0`centerText("x" ,ID,0)
 			y=0`centerText("y" ,ID,0)
 			`If API.gadget[ID].kind=9 then X=0 and y=0
-			If API.Gadget[ID].TextLeft=1
-				x=0+API.Gadget[ID].PadWIDth+API.Gadget[ID].BorderWIDth
-			Endif
-		
-			API.Gadget[ID].Textx=x
-			API.Gadget[ID].Texty=y
-			SetTextposition(TempText,x,y)
+			`If API.Gadget[ID].TextLeft=1 //add set text l t r b to all gadget
+				`x=API.Gadget[ID].PadWIDth+API.Gadget[ID].BorderWIDth
+			`Endif
+			
+			BlinkCursor()
+			`API.Gadget[ID].Textx=x +2
+			
+			SetTextposition(TempText,x+2,i*GetTextSize(temptext))
 			drawText(TempText)
 			deleteText(TempText)
 		Next
@@ -384,25 +385,23 @@ endfunction
 
 
 function BuildSlider(ID)
-	
+	local low as float
+	local high as float
+	local now as float
+	local height2 as float
+	local spritewidth# as float
+	local bw as Integer 
+	local pw as integer
 	If API.Gadget[ID].kind=8
-		
 		low#=API.Gadget[ID].rangeLow
 		High#=API.Gadget[ID].RangeHigh
 		Now#=API.Gadget[ID].NowRange
 
-
 		Height2=API.Gadget[ID].BuiltInIntParam[1]
 		Height1=api.gadget[id].height
-
 		range#=abs(high#-low#)
 		SpriteWIDth#=API.Gadget[ID].WIDth
 		percent#=(now#*SpriteWIDth#)/100
-		
-		
-
-		
-		`api.gadget[id].
 		Temp=createSprite(api.gadget[id].SecondImageID)
 		pw=API.Gadget[ID].PadWIDth
 		Bw=API.Gadget[ID].BorderWIDth
@@ -414,11 +413,7 @@ function BuildSlider(ID)
 		SetSpriteTransparency(Temp,1)
 		drawSprite(Temp)
 		deleteSprite(Temp)
-
-		
-		
 	Endif
-	
 endfunction
 
 

@@ -99,6 +99,11 @@ function load_gui_1()
 	setbrowsersize(ViewMouseOptions,140,400)
 	BorderAplphaSlider=MakeSlider()
 	MakeColorPicker()
+	
+	bborderTextBox=MakeTextBox()
+	SetTextBoxSize(bborderTextBox,131,183)
+	SetTextBoxPosition(bborderTextBox,182,185)
+	`AddChild(bborderTextBox,bgwin)
 endfunction
 		
 		
@@ -176,6 +181,9 @@ MakeToolBar()
 	SetTextBoxSize(borderTextBox,131,18)
 	SetTextBoxPosition(borderTextBox,82,85)
 	AddChild(borderTextBox,bgwin)
+	
+
+	
 	`Label Enable 
 	EnableLabel=MakeLabel("Enable")
 	SetLabelSize(EnableLabel,50,18)
