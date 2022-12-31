@@ -20,6 +20,17 @@ function MakeScrollBarVert()
 endfunction API.Gadget[ret].ID
 
 
+Function RunResolutionQueue()
+	for i =0 to api.resolutionQueue.length
+		id=api.resolutionQueue[i]
+		kind=api.gadget[id].kind
+		DrawGadget(id,kind)
+	next
+endfunction
+
+
+
+
 
 
 `MakeTextStringArray(" 'hello' 'this,' 'is' , my string,")`returns string array

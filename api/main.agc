@@ -20,7 +20,7 @@ SetScissor( 0,0,0,0 ) // use the maximum available screen space, no black border
 UseNewDefaultFonts( 1 )
 
 do
-	
+
     Print( ScreenFPS() )
     Sync()
 loop

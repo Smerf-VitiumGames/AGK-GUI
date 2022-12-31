@@ -21,8 +21,8 @@ function load_gui_1()
 	next
 	MakeCamera(0,"mycam0")
 	MakeCamera(1,"mycam1")
-	MakeCamera(2,"mycam3")
-	MakeCamera(3,"mycam4")
+	bbb=MakeCamera(2,"mycam3")
+	aaa=MakeCamera(3,"mycam4")
 	
 	//Ent Menu
 	`ent Window
@@ -30,7 +30,7 @@ function load_gui_1()
 	SetWindowPositionxy(gui.bar_Ent,1,27)
 	setWindowWidth(gui.bar_ent,46)
 	setWindowHeight (Gui.bar_ent,286)
-
+	
 	`Ent Title
 	EntLabel=MakeLabel("Entity's           ")
 	SetLabelSize(EntLabel,78,18)
@@ -86,8 +86,9 @@ function load_gui_1()
 	SetWindowSizexy(gui.bar_left,150,GetWindowHeight())
 	setwindowpositionxy(gui.bar_left,1,27)
 	AddChild(Gui.bar_ent,Gui.bar_left)
+		
+	SetWindowRelative(aaa,"left",1,10,bbb)
 	
-
 	ViewMouseOptions=makebrowser()
 	SetBrowserModeText(ViewMouseOptions)
 	list as string[]: list=["SingleFlash","Strobe","GlowFade","Ran Flicker","Fire Flicker","colorCangeQuick","ColorChangeFade","Normal"]

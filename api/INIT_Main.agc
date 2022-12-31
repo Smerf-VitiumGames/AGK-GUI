@@ -33,10 +33,6 @@ function INIT_API()
 	API.Gui.edit=LoadImage		(api.path+"api/media/smerf_api/"+"editbox.png")
 	API.Gui.checkbox=LoadImage	(api.path+"api/media/smerf_api/"+"checkbox.png")
 
-
-	
-
-
 	API.path="raw:"+getreadpath()+"media/"
 	API.GlobalGadgetNum =100
 	API.Active=-1
@@ -44,16 +40,16 @@ function INIT_API()
 	API.Mouse.Clickspeed=.2
 	resolution(1)
 	sync()
-	
 	LoadColors()
-	`load_gui()
 endfunction
 type Toolbars
 	`Entity as integer
 	RightPane as integer
 	LeftPane as integer
 endtype
+
 global toolbars
+
 type APIType
 	CursorPosx as Integer
 	CursorPosY as integer
@@ -86,6 +82,7 @@ type APIType
 	Cam as CameraType [3]
 	Template as TemplateType
 	PersistantButtonPress as integer
+	ResolutionQueue as integer[]
 endtype
 global API as APIType
 
@@ -122,6 +119,7 @@ type ApiGui //Media
 	checkbox as integer
 endtype
 
+
 `integrated check for issues
 type MainMenuType
 	oldHeight as integer
@@ -136,6 +134,7 @@ type MainMenuType
 	Size as integer
 endtype
 
+
 type CameraType
 	GadgetID as integer
 	clearColor as integer
@@ -147,6 +146,7 @@ type CameraType
 	RotY as Float
 	RotZ as Float
 endtype
+
 
 global Mousetype
 type Mousetype
@@ -168,15 +168,18 @@ type Mousetype
 	Drag as integer
 endtype
 
+
 function GetPointerMoveY()
 	Local ret as float
 	ret=API.Mouse.MY
 endfunction ret
 
+
 function GetPointerMoveX()
 	Local ret as float
 	ret=API.Mouse.MX
 endfunction ret
+
 
 Function resolution(flag as integer)
 	h=GetWindowHeight()
@@ -185,12 +188,10 @@ Function resolution(flag as integer)
 		API.WinHeight=h
 		API.WinWidth=w
 		SetVirtualResolution(API.WinWidth,API.WinHeight)
-		global crap
-		crap=crap+1
-		print(crap)
 		DrawToolbarBackground()
 	Endif
 endFunction
+
 
 
 function RUN_API()`RUN RUN RUN RUN
@@ -202,7 +203,7 @@ function RUN_API()`RUN RUN RUN RUN
 	RunSlider()
 	RunMouse()
 	RunMenu()
-RunTemplates()
+	RunTemplates()
 	If API.Gadget.Length >-1
 		runGadgets()
 	Endif
@@ -211,22 +212,26 @@ RunTemplates()
 		API.Dragbody=0
 		API.Mouse.Drag=0
 	endif
-	
-	
-		`reset Button Clicks
 endfunction
-
 
 
 
 function ApiSync()
 	API.ButtonPressed=-1
 	api.mouse.clicked=-1
+	resolution(0)
 	sync()
 endfunction
 
+
 function DeleteGadget(ID)
 	id=getid(id)
+	//delete from resolution queue if it exists
+		for b=0 to api.resolutionQueue.length
+			if api.resolutionQueue[id]=id
+			   	api.resolutionQueue.Remove(b)
+			endif
+		next
 	if ID <= API.Gadget.Length  and ID >-1
 		for i =0 to api.gadget[id].children.length
 			child=getid(api.gadget[id].children[i] )

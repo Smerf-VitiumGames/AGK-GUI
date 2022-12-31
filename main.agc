@@ -47,13 +47,12 @@ load_gui_1()
 
 
 do
-
-RUN_API()
-Rungui1()
-
+	RUN_API()
+	Rungui1()
 
 
-  ApiSync()
+
+	ApiSync()
 loop
 
 

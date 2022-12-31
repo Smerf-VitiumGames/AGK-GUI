@@ -63,10 +63,12 @@ Type GadgetType
 	Parent as integer
 	Children as integer []
 	sibling as integer
-	AlineLeftBool as integer
-	AlineTopBool as integer
-	AlineRightBool as integer
-	AlineBottomBool as integer
+	RelativeLeft as integer
+	RelativeTop as integer
+	RelativeRight as integer
+	RelativeBottom as integer
+	RelativeTarget as integer
+	RelativeDistance as integer
 	`behavior
 	`lcut as integer
 	AutoScroll as integer

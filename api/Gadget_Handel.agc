@@ -1,39 +1,74 @@
 function runGadgets()
 	If API.Active > -1 and API.Gadget.Length >-1
 		`optomize
-dontrunDrag =0
+		dontrunDrag =0
 
-			if API.active >-1 
-				parent=getid(API.gadget[API.active].parent)
-				if parent  >-1
-				  parent= API.gadget[parent].kind
-				Endif
-				
-				
-				`if  parent <> 9 `prevens browser from running alternat future solution  run drag check For parent coords if true and a 
-					`child is active set parent to active because drag  is within its coords
-					DragEdge()
-					if api.DragEdge>0 then DrawGadget(1,API.active)
-				`Endif
+		if API.active >-1 
+			parent=getid(API.gadget[API.active].parent)
+			if parent  >-1
+			  parent= API.gadget[parent].kind
 			Endif
-				`dontrunDrag=1
-
-
-			if AutoScroll() =1
-				`dontrunDrag=1
-			Endif	
-			`if dontrunDrag <>1
-			DragBody(0,0,0)
-			DragOnDrop()
-		`Endif
-
-			clip(0)
-		
+			`if  parent <> 9 `prevens browser from running alternat future solution  run drag check For parent coords if true and a 
+				`child is active set parent to active because drag  is within its coords
+			DragEdge()
+			if api.DragEdge>0 
+				 DrawGadget(1,API.active)
+			
+			Endif
+		Endif
+		DragBody(0,0,0)
+		DragOnDrop()
+		clip(0)
+			 RelativePosition()
 	Endif
 	`reduce to run .2 seconds loops no need to run all the time
 	RunTextBox()
 endfunction
 
+
+function RelativePosition() // not set yet set to run on drag only
+	for i = 0 to api.gadget.length
+
+		targetID=api.gadget[i].RelativeTarget
+
+		if TargetID > 0
+			TargetID=getid(targetid) 
+			if targetid <=api.gadget.length// has target
+			targetx=Api.gadget[targetid].PositionX
+			targety=Api.gadget[targetid].PositionY
+			targetWidth=Api.gadget[targetid].width
+			targetHeight=Api.gadget[targetid].Height
+			
+			distance=api.gadget[i].RelativeDistance
+			
+			x=api.gadget[i].PositionX
+			y=api.gadget[i].PositionY
+			width=api.gadget[i].width
+			height=api.gadget[i].height
+			
+			if api.gadget[i].RelativeLeft=1 
+				api.gadget[i].positionx= targetx-distance-width
+				setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionX,api.gadget[i].PositionY)
+			endif
+			
+			if api.gadget[i].RelativeRight=1 
+				api.gadget[i].positionx=targetx+targetWidth+distance
+				setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionX,api.gadget[i].PositionY)
+			endif
+			
+			if api.gadget[i].RelativeTop=1 
+				api.gadget[i].positionY=targetY-distance-height
+				setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionY,api.gadget[i].PositionY)
+			endif
+			
+			if api.gadget[i].RelativeBottom=1 
+				api.gadget[i].positionx=targetY+targetHeight+distance
+				setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionY,api.gadget[i].PositionY)
+			endif
+		endif
+		endif
+	next
+endfunction
 
 function Clip(var) 
 	For i =0 to API.Gadget.Length
@@ -50,19 +85,16 @@ function Clip(var)
 			ph=API.Gadget[p].positiony+API.Gadget[p].Height
 			Pad=API.Gadget[p].PadWidth
 			bor=API.Gadget[p].BorderWidth
-			
 			if px+bor+Pad > x then x=px+bor+Pad
 			if py+bor+Pad > y then y=py+bor+Pad
 			if pw-bor-Pad < w then w=pw-bor-Pad
 			if ph-bor-Pad < h then h=ph-bor-Pad
-			
 			if API.Gadget[p].parent > -1
 				pp=getid(API.Gadget[p].parent)
 				ppx=API.Gadget[pp].PositionX
 				ppy=API.Gadget[pp].positiony
 				ppw=API.Gadget[pp].PositionX+API.Gadget[pp].Width
 				pph=API.Gadget[pp].positiony+API.Gadget[pp].Height
-				
 				if ppx > x then x=ppx
 				if ppy > y then y=ppy
 				if ppw < w then w=ppw
@@ -71,20 +103,20 @@ function Clip(var)
 		Endif
 		xoffSet=API.Gadget[i].HorizontalOffSet
 		SetSpriteScissor(API.Gadget[i].SpriteID,x,y,w,h) 
-			if API.Gadget[API.Active].parent >-1
-				parent=getid(API.Gadget[API.Active].parent)
-				px=API.Gadget[parent].PositionX
-				py=API.Gadget[parent].Positiony
-				pw=API.Gadget[parent].Width
-				ph=API.Gadget[parent].Height
-				if API.Dragbody=1 and TIMER()-API.stopEdgeDrag > .400  
-					if API.Mouse.x < px or API.Mouse.x > px+pw or API.Mouse.y < py or API.Mouse.y > py+ph	
-						unparent(-1)
-						exitfunction
-					Endif
+		if API.Gadget[API.Active].parent >-1
+			parent=getid(API.Gadget[API.Active].parent)
+			px=API.Gadget[parent].PositionX
+			py=API.Gadget[parent].Positiony
+			pw=API.Gadget[parent].Width
+			ph=API.Gadget[parent].Height
+			if API.Dragbody=1 and TIMER()-API.stopEdgeDrag > .400  
+				if API.Mouse.x < px or API.Mouse.x > px+pw or API.Mouse.y < py or API.Mouse.y > py+ph	
+					unparent(-1)
+					exitfunction
 				Endif
 			Endif
-		next
+		Endif
+	next
 endfunction
 
 
@@ -97,16 +129,13 @@ function Depth_Highlight()
 		a=getcolorAlpha(API.Gadget[API.hoverActive].SpriteColor)
 		SetSpritecolor(API.Gadget[API.hoverActive].SpriteID,r/4,g/4,b/4,a)
 		SetSpriteTransparency(API.Gadget[API.hoverActive].SpriteID,2)
-		
 	Endif
-	
 	For i= 0 to API.Gadget.Length
-			If API.gadget[i].Spriteid <> API.SpriteHit
-				SetSpriteTransparency(API.Gadget[i].SpriteID,1)
-				a=getcolorAlpha(API.Gadget[i].SpriteColor)
-				SetSpritecolor(API.Gadget[i].SpriteID,255,255,255,a)
-			Endif
-	
+		If API.gadget[i].Spriteid <> API.SpriteHit
+			SetSpriteTransparency(API.Gadget[i].SpriteID,1)
+			a=getcolorAlpha(API.Gadget[i].SpriteColor)
+			SetSpritecolor(API.Gadget[i].SpriteID,255,255,255,a)
+		Endif
 	//depth only runs on new Mouse selection
 		If API.Gadget[i].LegacyID=API.Gadget[API.hoverActive].LegacyID
 			SetSpritedepth(API.Gadget[i].SpriteID,API.Gadget[i].Depth-200)
@@ -130,22 +159,16 @@ function DragBody(flag,xx,yy)`recursive resue if can
 		API.Mouse.mx=xx
 		API.Mouse.my=yy
 		goto ForceMove:
-		
 	Endif
-	
-	
-	
 	
 	If API.Mouse.Drag=1 and API.DragEdge=0 and API.Gadget[API.Active].DragBool=1
 		API.Dragbody=1
 		x=API.Gadget[Active].positionX
 		y=API.Gadget[Active].positionY
 		if x+API.Mouse.mx > 0 and y+API.Mouse.my >0 and x+API.Gadget[Active].Width+API.Mouse.mx < API.WinWidth and y+API.Gadget[Active].Height+API.Mouse.my < API.WinHeight
-
-		 ForceMove:
-		x=API.Gadget[Active].positionX
-		y=API.Gadget[Active].positionY
-		
+			ForceMove:
+			x=API.Gadget[Active].positionX
+			y=API.Gadget[Active].positionY
 			API.Gadget[Active].positionX=x+API.Mouse.mx
 			API.Gadget[Active].positionY=Y+API.Mouse.my
 			SetSpritePosition(API.Gadget[Active].SpriteID,API.Gadget[Active].positionX,API.Gadget[Active].positionY)
@@ -224,11 +247,9 @@ function unparent(Manual)`might cause issues with legacy ids's shares with old p
 			Endif
 		next
 	Endif
-	
 	oldlegacy=API.Gadget[Active].LegacyID
 	inc API.LegacyID, 2
 	API.Gadget[Active].LegacyID=API.LegacyID
-	
 	API.Gadget[Active].parent=-1
 	API.Gadget[Active].depth=1000
 	oldSpriteDepth=getSpritedepth(API.Gadget[Active].SpriteID)
