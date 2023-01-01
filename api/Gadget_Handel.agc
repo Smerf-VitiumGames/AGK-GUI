@@ -312,19 +312,31 @@ function unparent(Manual)`might cause issues with legacy ids's shares with old p
 	oldSpriteDepth=getSpritedepth(API.Gadget[Active].SpriteID)
 	`SetSpriteDepth(API.Gadget[Active].SpriteID,800)
 	difference=abs(oldSpriteDepth-800)
-	if API.Gadget[Active].kind =2 or API.Gadget[Active].kind =9 `or API.Gadget[Active].kind =5
-		For i=0 to API.Gadget.Length
-			if API.Gadget[i].legacyid=oldlegacy and API.Active <> i and i<> parent
-				idepth=getSpritedepth(API.Gadget[i].Spriteid)
-				if idepth< oldSpritedepth
-					newDepthDiff=abs(oldSpritedepth-idepth)
-					`SetSpritedepth(API.Gadget[i].SpriteID,800-newDepthDiff)
-					API.Gadget[i].depth=1000-newDepthDiff
-					API.Gadget[i].legacyid=API.Gadget[API.Active].legacyid
-				Endif
+	//new test
+	For i=0 to api.gadget.length
+		idepth=getSpritedepth(API.Gadget[i].Spriteid)
+		if api.gadget[i].parent=api.gadget[api.active].id
+			if idepth< oldSpritedepth
+				newDepthDiff=abs(oldSpritedepth-idepth)
+				API.Gadget[i].depth=1000-newDepthDiff
+				API.Gadget[i].legacyid=API.Gadget[API.Active].legacyid
 			Endif
-		next		
-	Endif												
+		endif
+	next
+	//backup  just in case have no idea what i was doing here but maybe there was a mtehod to the madness
+	`if API.Gadget[Active].kind =2 or API.Gadget[Active].kind =9 `or API.Gadget[Active].kind =5
+		`For i=0 to API.Gadget.Length
+		`	if API.Gadget[i].legacyid=oldlegacy and API.Active <> i and i<> parent
+		`		idepth=getSpritedepth(API.Gadget[i].Spriteid)
+		`		if idepth< oldSpritedepth
+		`			newDepthDiff=abs(oldSpritedepth-idepth)
+		`			`SetSpritedepth(API.Gadget[i].SpriteID,800-newDepthDiff)
+		`			API.Gadget[i].depth=1000-newDepthDiff
+		`			API.Gadget[i].legacyid=API.Gadget[API.Active].legacyid
+		`		Endif
+		`	Endif
+		`next		
+	`Endif												
 endfunction
 
 
