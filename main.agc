@@ -40,15 +40,19 @@ INIT_API()
 
 
 `try these GUIs out!
- load_gui_1()
+ load_gui_1()//a screen built in the api that 
 `load_gui_2()
 
 
 
 do
 	RUN_API()
-	Rungui1()
+	
+	Rungui1()//a screen built in the api that runs function on the screen 
+	
+	
 	ApiSync()
+	
 loop
 
 

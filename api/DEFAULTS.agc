@@ -44,8 +44,8 @@ Function BuildDefaultButton()// Future functionality type this insert defaults b
 	Temp.EditMode=1
 	Temp.ActiveBool=1
 	Temp.ToolTip=""
-	Temp.DragBool=0
-	Temp.ReSizeBool=0
+	Temp.DragBool=1
+	Temp.ReSizeBool=1
 	Temp.MinimizeBool=0
 	Temp.MaximizeBool=0
 	Temp.CloseBool=0
@@ -104,7 +104,7 @@ function BuildDefaultWindow()// Future functionality type this insert defaults b
 	Temp.ActiveBool=1
 	Temp.ToolTip="dddd"
 	Temp.DragBool=1
-	Temp.ReSizeBool=0
+	Temp.ReSizeBool=1
 	Temp.MinimizeBool=0
 	Temp.MaximizeBool=0
 	Temp.CloseBool=0
@@ -162,7 +162,7 @@ function BuildDefaultCheckBox()// Future functionality type this insert defaults
 	Temp.ActiveBool=1
 	Temp.ToolTip="Checkbox"
 	Temp.DragBool=1
-	Temp.ReSizeBool=0
+	Temp.ReSizeBool=1
 	Temp.MinimizeBool=0
 	Temp.MaximizeBool=0
 	Temp.CloseBool=0

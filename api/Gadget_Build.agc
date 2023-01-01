@@ -62,7 +62,6 @@ Type GadgetType
 	hasScrollbBar as integer
 	Parent as integer
 	Children as integer []
-	sibling as integer
 	RelativeLeft as integer
 	RelativeTop as integer
 	RelativeRight as integer
@@ -72,15 +71,10 @@ Type GadgetType
 	RelativeInsideOutside as integer // 0 inside 1 outsi
 	relativeResizeBool as integer
 	`behavior
-	`lcut as integer
 	AutoScroll as integer
 	VerticalOffSet as integer`scroller
 	HorizontalOffSet as integer`scroller
 	ScrollBool as integer
-	lRleative as integer
-	RRelative as integer
-	TRelative as integer
-	BRelative as integer
 	ActiveBool as integer
 	ToolTip as string
 	DragBool as integer

@@ -312,7 +312,7 @@ function unparent(Manual)`might cause issues with legacy ids's shares with old p
 	oldSpriteDepth=getSpritedepth(API.Gadget[Active].SpriteID)
 	`SetSpriteDepth(API.Gadget[Active].SpriteID,800)
 	difference=abs(oldSpriteDepth-800)
-	if API.Gadget[Active].kind =2 or API.Gadget[Active].kind =9 or API.Gadget[Active].kind =5
+	if API.Gadget[Active].kind =2 or API.Gadget[Active].kind =9 `or API.Gadget[Active].kind =5
 		For i=0 to API.Gadget.Length
 			if API.Gadget[i].legacyid=oldlegacy and API.Active <> i and i<> parent
 				idepth=getSpritedepth(API.Gadget[i].Spriteid)
