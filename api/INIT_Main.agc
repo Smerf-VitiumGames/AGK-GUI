@@ -41,6 +41,12 @@ function INIT_API()
 	resolution(1)
 	sync()
 	LoadColors()
+	api.disable.clipping=0
+	api.disable.DragBody=0
+	api.disable.DragDrop=0
+	api.disable.DragEdge=0
+	api.disable.Relative=0
+
 endfunction
 type Toolbars
 	`Entity as integer

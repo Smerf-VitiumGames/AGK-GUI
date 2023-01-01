@@ -28,7 +28,6 @@ SetCameraPosition(1,0,0,-4)
 SetCameraRotation(1,0,0,0)
 sync()
 
-EnableDebugMessages(1)
 
 
 
@@ -41,13 +40,12 @@ INIT_API()
 
 
 `try these GUIs out!
-load_gui_1()
+ load_gui_1()
 `load_gui_2()
 
 
 
 do
-	print(getframetime())
 	RUN_API()
 	Rungui1()
 	ApiSync()
