@@ -97,7 +97,7 @@ FILE_NAME_18=0;Gadget_TextBox.agc;42;18
 FILE_NAME_19=0;INIT_Main.agc;46;19
 FILE_NAME_20=0;main.agc;28;20
 FILE_NAME_21=0;system.agc;63;21
-FILE_NAME_22=0;templates.agc;138;22
+FILE_NAME_22=1;templates.agc;91;22
 FILE_NAME_23=0;test_GUI.agc;99;23
 
 [watchvariables]

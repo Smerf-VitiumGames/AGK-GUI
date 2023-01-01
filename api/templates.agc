@@ -67,11 +67,10 @@ function RunTemplates()
 //this checks for a button press
 //find the element with your text then check to see if it is the active button
 //if so find the desired target via name and set its value
-	
-// ####Start BUTTON CODE	#######################################################
-	if GetButtonPress() >0
-		 if len(Api.gadget[getid(GetButtonPress())].name)>0 and Api.gadget[getid(GetButtonPress())].parent> 0
-//#Add Your Code Below__#Add Your Code Below__#Add Your Code Below__#Add Your Code Below__#Add Your Code Below__
+
+if GetButtonPress() >0
+if len(Api.gadget[getid(GetButtonPress())].name)>0 and Api.gadget[getid(GetButtonPress())].parent> 0
+//#Add Your Code Below
 
 
 
@@ -88,10 +87,171 @@ function RunTemplates()
 			endif
 			
 
-	endif
+
+
+
+endif
 endif	
-// ####end BUTTON CODE	#######################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 endfunction
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 type TemplateType
