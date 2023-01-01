@@ -87,7 +87,7 @@ function load_gui_1()
 	setwindowpositionxy(gui.bar_left,1,27)
 	AddChild(Gui.bar_ent,Gui.bar_left)
 		
-	SetWindowRelative(aaa,"left",1,10,bbb)
+	SetWindowRelative (aaa,"right",1,10,bbb,1,0)
 	
 	ViewMouseOptions=makebrowser()
 	SetBrowserModeText(ViewMouseOptions)

@@ -20,13 +20,7 @@ function MakeScrollBarVert()
 endfunction API.Gadget[ret].ID
 
 
-Function RunResolutionQueue()
-	for i =0 to api.resolutionQueue.length
-		id=api.resolutionQueue[i]
-		kind=api.gadget[id].kind
-		DrawGadget(id,kind)
-	next
-endfunction
+
 
 
 
@@ -145,9 +139,25 @@ function FileSearch(GadgetID,folder,id,foldername$,Directory$,filter$,DirMode)//
 	Endif
 endfunction 
 	
+function ToggleDragBody()
+	api.disable.DragBody=abs(api.disable.DragBody-1)
+Endfunction
 
+function ToggleDragEdge()
+	api.disable.DragEdge=abs(api.disable.DragEdge-1)
+Endfunction
 
+function ToggleClipping()
+	api.disable.Clipping=abs(api.disable.Clipping-1)
+Endfunction
 
+function ToggleRelativePositioning()
+	api.disable.DragDrop=abs(api.disable.DragDrop-1)
+Endfunction
+
+function ToggleDragAndDrop()
+	api.disable.Relative=abs(api.disable.Relative-1)
+Endfunction
 
 
 

@@ -19,6 +19,8 @@ SetSyncRate( 30, 0 ) // 30fps instead of 60 to save battery
 SetScissor( 0,0,0,0 ) // use the maximum available screen space, no black borders
 UseNewDefaultFonts( 1 )
 
+
+ToggleDragEdge()
 do
 
     Print( ScreenFPS() )

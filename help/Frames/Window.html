@@ -82,7 +82,15 @@ Defaults are not part of the api language because it is much quicker to edit eac
 	<b><p class=description>&nbspSetWindowActivateMode(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1, (1) Enables Hover to activate, "0"
 									Default Behavior</em></p>
 	<b><p class=description>&nbsp SetWindowHighlight(ID,Bool)</b> &nbsp  <em> `Accepts Integer 1-0, Enables Highlighting</em></p>
-
+	<b><p class=description>&nbsp SetWindowRelative(id,left_Top_Right_Bottom$,on_off,distanceToTarget,targetID_zeroForWindow,insideOrOutide,resizeBool)</b><br> &nbsp <em> <br>
+	&nbsp This command sets a gadget relative to another gadget, if movement or resising of the target gadget occurs this gadget will move in <br>
+	&nbsprelation to it with a dsignated spacing. Usage: id of gadget, relitive position ,turn this feature on or off, distance to maintain between its target,<br> 
+	&nbspthe id of the target gadget  "use zero for the main window",  inside or outside inside=0,outside=1, this will bind the gadget to the outide border or the <br>
+	&nbspinside border of the target. resizebool 0 off 1 on. resizebool resizes the target gadget and does not reposition it.  this is useful for rearanging<br>
+	&nbspmenus to make space  on a window or expanding an area.
+	
+	
+	</em></p>
 
 </div>
 </div></center>

@@ -82,7 +82,7 @@ type APIType
 	Cam as CameraType [3]
 	Template as TemplateType
 	PersistantButtonPress as integer
-	ResolutionQueue as integer[]
+	Disable as DisableType
 endtype
 global API as APIType
 
@@ -98,7 +98,15 @@ type ReturnType
 	strings as string[]
 endtype
 
+Type DisableType
+	clipping as Integer
+	DragDrop as integer
+	DragEdge as Integer
+	DragBody as Integer
+	Relative as integer	
+endtype
 
+    
 function Ret(t as returnType)
 endfunction
 
@@ -119,6 +127,7 @@ type ApiGui //Media
 	checkbox as integer
 endtype
 
+global bool as integer
 
 `integrated check for issues
 type MainMenuType
@@ -226,12 +235,6 @@ endfunction
 
 function DeleteGadget(ID)
 	id=getid(id)
-	//delete from resolution queue if it exists
-		for b=0 to api.resolutionQueue.length
-			if api.resolutionQueue[id]=id
-			   	api.resolutionQueue.Remove(b)
-			endif
-		next
 	if ID <= API.Gadget.Length  and ID >-1
 		for i =0 to api.gadget[id].children.length
 			child=getid(api.gadget[id].children[i] )

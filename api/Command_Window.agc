@@ -144,7 +144,7 @@ Function GetWindowY(ID)
 endfunction
 
 
-function SetWindowRelative(id,left_Top_Right_Bottom$,on_off,distance,targetID_zeroForWindow)//do not call this in a loop used for setup noly
+function SetWindowRelative(id,left_Top_Right_Bottom$,on_off,distanceToTarget,targetID_zeroForWindow,insideOrOutide,resizeBool)//do not call this in a loop used for setup noly
 	id=getid(id)
 	if id >-1 and on_off >-1 and on_off < 2
 		t$=left_Top_Right_Bottom$
@@ -153,7 +153,8 @@ function SetWindowRelative(id,left_Top_Right_Bottom$,on_off,distance,targetID_ze
 		If lower(t$)="right" then API.gadget[id].RelativeRight=on_off
 		If lower(t$)="bottom" then API.gadget[id].RelativeBottom=on_off
 		api.gadget[id].RelativeTarget=targetID_zeroForWindow
-		api.gadget[id].RelativeDistance=distance
+		api.gadget[id].RelativeDistance=DistanceToTarget
+		api.gadget[id].relativeResizeBool=resizeBool
 	endif
 endfunction
 

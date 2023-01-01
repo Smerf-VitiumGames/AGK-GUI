@@ -69,6 +69,8 @@ Type GadgetType
 	RelativeBottom as integer
 	RelativeTarget as integer
 	RelativeDistance as integer
+	RelativeInsideOutside as integer // 0 inside 1 outsi
+	relativeResizeBool as integer
 	`behavior
 	`lcut as integer
 	AutoScroll as integer

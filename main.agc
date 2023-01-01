@@ -40,18 +40,16 @@ EnableDebugMessages(1)
 INIT_API()
 
 
-`try these guis out!
+`try these GUIs out!
 load_gui_1()
 `load_gui_2()
 
 
 
 do
+	print(getframetime())
 	RUN_API()
 	Rungui1()
-
-
-
 	ApiSync()
 loop
 
