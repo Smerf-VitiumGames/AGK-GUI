@@ -57,12 +57,63 @@ endfunction
 
 
 Function SetWindowPositionXY(ID,x,y)
+
 	ID=getID(ID)`return array index
 	if GetWindowExists(ID)=1
-		API.Gadget[ID].PositionX =x
-		API.Gadget[ID].PositionY =y
-		setSpriteposition(API.Gadget[ID].SpriteID,x,y)
-	Endif
+		oldx=API.Gadget[ID].Positionx
+		oldy=API.Gadget[ID].Positiony
+		API.Gadget[ID].PositionX=x
+		API.Gadget[ID].Positiony=y
+		setspriteposition(API.Gadget[ID].SpriteID,x,y)
+		neg=-1
+		
+		
+		movex=oldx-x
+		movey=oldy-y
+		
+
+	
+			
+		For c = 0 to API.Gadget[ID].Children.length
+			child=getid(api.gadget[id].Children[c])
+			cx=api.gadget[child].PositionX
+			cy=api.gadget[child].PositionY
+			
+
+			api.gadget[child].PositionX=api.gadget[child].PositionX-movex
+			api.gadget[child].Positiony=api.gadget[child].PositionY-movey
+			SetSpritePosition(api.gadget[child].spriteid,api.gadget[child].PositionX,api.gadget[child].Positiony)
+			`sub children
+			
+			
+			
+			For sub = 0 to API.Gadget[child].Children.length
+				subchild=getid(api.gadget[child].Children[sub])
+				subx=api.gadget[subchild].PositionX
+				suby=api.gadget[subchild].PositionY
+				
+				api.gadget[subchild].PositionX=api.gadget[subchild].PositionX-movex
+				api.gadget[subchild].Positiony=api.gadget[subchild].PositionY-movey
+				SetSpritePosition(api.gadget[subchild].spriteid,api.gadget[subchild].PositionX,api.gadget[subchild].Positiony)
+			next
+			
+			
+		next
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		endif
+		
+		
+
+	
+	
 endfunction
 
 
@@ -148,13 +199,28 @@ function SetWindowRelative(id,left_Top_Right_Bottom$,on_off,distanceToTarget,tar
 	id=getid(id)
 	if id >-1 and on_off >-1 and on_off < 2
 		t$=left_Top_Right_Bottom$
-		If lower(t$)="left" then API.gadget[id].Relativeleft=on_off
-		If lower(t$)="top" then API.gadget[id].RelativeTop=on_off
-		If lower(t$)="right" then API.gadget[id].RelativeRight=on_off
-		If lower(t$)="bottom" then API.gadget[id].RelativeBottom=on_off
-		api.gadget[id].RelativeTarget=targetID_zeroForWindow
-		api.gadget[id].RelativeDistance=DistanceToTarget
-		api.gadget[id].relativeResizeBool=resizeBool
+		If lower(t$)="left"  
+			API.gadget[id].Relative.l.bool=on_off
+			api.gadget[id].Relative.l.distance=distanceToTarget
+			api.gadget[id].relative.l.resize =resizeBool
+		endif
+		If lower(t$)="top" 
+			API.gadget[id].Relative.T.bool=on_off
+			api.gadget[id].Relative.t.distance=distanceToTarget
+			api.gadget[id].relative.t.resize =resizeBool
+		endif
+		If lower(t$)="right" 
+			API.gadget[id].Relative.R.Bool=on_off
+			api.gadget[id].Relative.r.distance=distanceToTarget
+			api.gadget[id].relative.r.resize =resizeBool
+		endif
+		If lower(t$)="bottom" 
+			API.gadget[id].Relative.B.Bool=on_off
+			api.gadget[id].Relative.b.distance=distanceToTarget
+			api.gadget[id].relative.b.resize =resizeBool
+		endif
+		api.gadget[id].Relative.Target=targetID_zeroForWindow
+		
 	endif
 endfunction
 

@@ -30,14 +30,22 @@ function load_gui_1()
 	SetWindowPositionxy(gui.bar_Ent,1,27)
 	setWindowWidth(gui.bar_ent,46)
 	setWindowHeight (Gui.bar_ent,286)
-	
+
+
+	gui.Bar_right=makewindow()
+	setWindowWidth(gui.bar_right,146)
+	setWindowHeight (Gui.bar_right,800)
+	SetWindowRelative(gui.bar_right,"right",1,10,0,1,0)
+	SetWindowRelative(gui.bar_right,"bottom",1,10,0,1,0)
+	SetWindowRelative(gui.bar_right,"top",1,10,0,1,0)
+
 	`Ent Title
-	EntLabel=MakeLabel("Entity's           ")
+	EntLabel=MakeLabel("Entity's")
 	SetLabelSize(EntLabel,78,18)
 	AddChild(EntLabel,Gui.bar_ent)
 	SetLabelPosition(EntLabel,2,0)
 	setlabelmove(entlabel,0)
-		
+
 	camImage=loadimage(API.path+"/gui/camera.png")
 	Camera=MakeButton()
 	setbuttonBGImage(camera,camimage)
@@ -86,8 +94,7 @@ function load_gui_1()
 	SetWindowSizexy(gui.bar_left,150,GetWindowHeight())
 	setwindowpositionxy(gui.bar_left,1,27)
 	AddChild(Gui.bar_ent,Gui.bar_left)
-		
-	SetWindowRelative (aaa,"right",1,10,bbb,1,0)
+	`SetWindowRelative (aaa,"right",1,10,bbb,1,0)
 	
 	ViewMouseOptions=makebrowser()
 	SetBrowserModeText(ViewMouseOptions)
@@ -99,16 +106,23 @@ function load_gui_1()
 	setBrowserPosition(ViewMouseOptions,4,316)
 	setbrowsersize(ViewMouseOptions,140,400)
 	BorderAplphaSlider=MakeSlider()
-	MakeColorPicker()
+	p=MakeColorPicker()
+	addchild(p,gui.bar_right)
 	
 	bborderTextBox=MakeTextBox()
 	SetTextBoxSize(bborderTextBox,131,183)
 	SetTextBoxPosition(bborderTextBox,182,185)
 	`AddChild(bborderTextBox,bgwin)
+	
+
+	UpdateGui()
 endfunction
 		
 		
-		
+function UpdateGUI
+	RelativePosition()
+	RelativePosition()
+endfunction
 		
 	
 function load_GUI_2()

@@ -62,14 +62,6 @@ Type GadgetType
 	hasScrollbBar as integer
 	Parent as integer
 	Children as integer []
-	RelativeLeft as integer
-	RelativeTop as integer
-	RelativeRight as integer
-	RelativeBottom as integer
-	RelativeTarget as integer
-	RelativeDistance as integer
-	RelativeInsideOutside as integer // 0 inside 1 outsi
-	relativeResizeBool as integer
 	`behavior
 	AutoScroll as integer
 	VerticalOffSet as integer`scroller
@@ -84,6 +76,7 @@ Type GadgetType
 	CloseBool as integer
 	TooltipBool as integer
 	Custom1 as integer []
+	Relative as relativeType
 	BuiltInStrParam as String []
 	BuiltInIntParam as integer []`For indevIDual custom params
 	BuiltInStrParam2 as String []
@@ -106,6 +99,20 @@ Type GadgetType
 	camIndex as integer
 endtype
 
+type RelativeType
+	InsideOutside as Integer
+	target as integer
+	L as RelDirectionType
+	T as RelDirectionType
+	R as RelDirectionType
+	B as RelDirectionType
+endtype
+
+type RelDirectionType
+	Bool as integer	
+	resize as integer `mode scale based on relation or move
+	distance as integer `distance from edge
+endtype
 
 function AddGadget(Kind)`calls config.agc
 		If kind=1 then BuildDefaultButton()
@@ -238,6 +245,7 @@ Function DrawGadget(kind,Remake)`remkake=array
 	SetSpriteSize(SpriteID,SizeX,SizeY+1)
 	`SetSpriteTransparency(API.Gadget[ID].SpriteID,1)
 	SetSpritePosition(API.Gadget[ID].SpriteID,API.Gadget[ID].PositionX,API.Gadget[ID].PositionY)
+
 endfunction ID
 
  

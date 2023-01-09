@@ -204,6 +204,7 @@ Function resolution(flag as integer)
 		API.WinWidth=w
 		SetVirtualResolution(API.WinWidth,API.WinHeight)
 		DrawToolbarBackground()
+		RelativePosition()	
 	Endif
 endFunction
 
@@ -211,6 +212,7 @@ endFunction
 
 function RUN_API()`RUN RUN RUN RUN
 	GetButtonPress()
+	`RelativePosition()
 	API.Mouse.x=getpointerx()
 	API.Mouse.y=getpointery()
 	resolution(0)

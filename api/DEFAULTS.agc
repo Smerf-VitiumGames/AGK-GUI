@@ -35,10 +35,6 @@ Function BuildDefaultButton()// Future functionality type this insert defaults b
 	Temp.Bordercolor=API.Color.black
 	Temp.Bgcolor=API.Color.black
 	Temp.Fontcolor=API.Color.white
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.White
 	`behavior
 	Temp.EditMode=1
@@ -94,10 +90,6 @@ function BuildDefaultWindow()// Future functionality type this insert defaults b
 	Temp.Bordercolor=API.Color.black
 	Temp.Bgcolor=makecolor(114,114,114,255)
 	Temp.Fontcolor=API.Color.white
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.Darkgray
 	`behavior
 	Temp.EditMode=1
@@ -152,10 +144,6 @@ function BuildDefaultCheckBox()// Future functionality type this insert defaults
 	Temp.Bordercolor=API.Color.black
 	Temp.Bgcolor=API.Color.white
 	Temp.Fontcolor=API.Color.white
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.Darkgray
 	`behavior
 	Temp.EditMode=1
@@ -204,10 +192,6 @@ function BuildDefaultScrollBar()// Future functionality type this insert default
 	Temp.Bordercolor=API.Color.black
 	Temp.Bgcolor=API.Color.black
 	Temp.Fontcolor=API.Color.white
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.Darkgray
 	Temp.ScrollSlidercolor=API.Color.Gray
 	`behavior
@@ -258,10 +242,6 @@ function BuildDefaultScrollBar2()// Future functionality type this insert defaul
 	Temp.Bordercolor=API.Color.darkgray
 	Temp.Bgcolor=API.Color.black
 	Temp.Fontcolor=API.Color.white
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.Darkgray
 	Temp.ScrollSlidercolor=API.Color.Gray
 	`behavior
@@ -313,10 +293,6 @@ function BuildDefaultTextBox()// Future functionality type this insert defaults 
 	Temp.Bordercolor=API.Color.darkgray
 	Temp.Bgcolor=API.Color.Lightgray
 	Temp.Fontcolor=API.Color.black
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.gray
 	`behavior
 	Temp.EditMode=0
@@ -368,10 +344,6 @@ Function BuildDefaultLabel()// Future functionality type this insert defaults ba
 	Temp.Bordercolor=API.Color.blue
 	Temp.Bgcolor=API.Color.gray
 	Temp.Fontcolor=API.Color.black
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.White
 	`behavior
 	Temp.EditMode=1
@@ -425,10 +397,6 @@ Function BuildDefaultDivider()// Future functionality type this insert defaults 
 	Temp.Bordercolor=API.Color.blue
 	Temp.Bgcolor=API.Color.gray
 	Temp.Fontcolor=API.Color.black
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.White
 	`behavior
 	Temp.EditMode=1
@@ -486,10 +454,6 @@ Function BuildDefaultSlider()// Future functionality type this insert defaults b
 	Temp.Bordercolor=API.Color.blue
 	Temp.Bgcolor=API.Color.gray
 	Temp.Fontcolor=API.Color.black
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.White
 	`behavior
 	Temp.EditMode=1
@@ -549,10 +513,6 @@ Function BuildDefaultBrowser()// Future functionality type this insert defaults 
 	Temp.Bordercolor=API.Color.black
 	Temp.Bgcolor=API.Color.gray
 	Temp.Fontcolor=API.Color.black
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.White
 	`behavior
 	Temp.EditMode=1
@@ -613,10 +573,6 @@ function BuildDefaultViewPort()// Future functionality type this insert defaults
 	Temp.Bordercolor=API.Color.orange
 	Temp.Bgcolor=API.Color.black
 	Temp.Fontcolor=API.Color.white
-	Temp.RelativeLeft=0
-	Temp.RelativeTop=0
-	Temp.RelativeRight=0
-	Temp.RelativeBottom=0
 	Temp.SpriteColor=API.Color.Darkgray
 	
 	`behavior

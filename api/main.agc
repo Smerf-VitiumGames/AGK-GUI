@@ -20,9 +20,8 @@ SetScissor( 0,0,0,0 ) // use the maximum available screen space, no black border
 UseNewDefaultFonts( 1 )
 
 
-ToggleDragEdge()
+`ToggleDragEdge()
 do
-
-    Print( ScreenFPS() )
-    Sync()
-loop
+	sync()
+	print('wrong one')
+	loop

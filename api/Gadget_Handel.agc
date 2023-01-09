@@ -17,110 +17,110 @@ function runGadgets()
 		if api.disable.DragBody=0 	then DragBody(0,0,0)
 		if api.disable.DragDrop=0 	then DragOnDrop()
 		if api.disable.Clipping=0 	then Clip(0)
-		if api.disable.Relative=0 	then RelativePosition()
+		 
 		RunTextBox()
 	Endif
-	
-
+	`only run if resolution changes then check if it has  draw call if so check its children for a change
+	 	
 endfunction
 
 
 function RelativePosition() // not set yet set to run on drag only
-	for i = 0 to api.gadget.length
-		screenwidth=0
-		targetIDz=api.gadget[i].RelativeTarget
-		x=api.gadget[i].PositionX
-		y=api.gadget[i].PositionY
-		width=api.gadget[i].width
-		height=api.gadget[i].height
-		if TargetIDz > 0
-			TargetID=getid(targetidz) 
-			if targetid <=api.gadget.length// has target
-				targetx=Api.gadget[targetid].PositionX
-				targety=Api.gadget[targetid].PositionY
-				targetWidth=Api.gadget[targetid].width
-				targetHeight=Api.gadget[targetid].Height
-				InOrOutside=Api.gadget[targetid].RelativeInsideOutside
-
-				if InOrOutside=1 and targetidz<>0 then distance=(distance+width)*-1
-				if InOrOutside=0 and targetidz<>-1 then distance=api.gadget[i].RelativeDistance
-				if api.gadget[i].RelativeLeft=1
-					futurewidth=   targetx-api.gadget[i].positionx -distance
-					if futurewidth >5 and API.gadget[targetid].relativeResizeBool=1
-						api.gadget[i].width=futurewidth -distance
-						DrawGadget(i,api.gadget[i].kind)
-					else
-						api.gadget[i].positionx= targetx-distance-width
-						setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionX,api.gadget[i].PositionY)
-					endif
-				endif
-				if api.gadget[i].RelativeRight=1 
-					futurewidth=   api.gadget[i].positionx-(targetx+targetwidth+distance) 
-					if futurewidth >5 and API.gadget[targetid].relativeResizeBool=1
-						api.gadget[i].width=futurewidth 
-						api.gadget[i].PositionX=targetx+distance
-						DrawGadget(i,api.gadget[i].kind)
-					else
-						api.gadget[i].positionx=targetx+targetWidth+distance
-						setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionX,api.gadget[i].PositionY)
-					endif
-				endif
-				if api.gadget[i].RelativeTop=1//top
-					futureheight=   api.gadget[i].positiony-(targety+targetheight+distance) 
-					if futureheight >5 and API.gadget[targetid].relativeResizeBool=1
-						api.gadget[i].height=futureheight 
-						api.gadget[i].Positiony=targety+distance
-						DrawGadget(i,api.gadget[i].kind)
-					else
-						api.gadget[i].positionY=targetY-distance-height
-						setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionY,api.gadget[i].PositionY)
-					endif
-				endif
-				if api.gadget[i].RelativeBottom=1//bottom
-					futureheight=   api.gadget[i].positiony-(targety+targetheight+distance) 
-					if futureheight >5 and API.gadget[targetid].relativeResizeBool=1
-						api.gadget[i].height=futureheight 
-						api.gadget[i].Positiony=targety+distance
-						DrawGadget(i,api.gadget[i].kind)
-					else
-						api.gadget[i].positionx=targetY+targetHeight+distance
-						setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionY,api.gadget[i].PositionY)
-					endif
-				endif
-			endif
-		endif
-		//screen	
-		if targetIDz=-1
-			if api.gadget[i].RelativeLeft=1 
-				api.gadget[i].positionx= distance
-				setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionX,api.gadget[i].PositionY)
-			endif
-			if api.gadget[i].RelativeRight=1 
-				api.gadget[i].positionx=GetWindowWidth() -width-distance
-				setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionX,api.gadget[i].PositionY)
-			endif
-			if api.gadget[i].RelativeTop=1 
-				api.gadget[i].positionY=distance
-				setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionY,api.gadget[i].PositionY)
-			endif
-			if api.gadget[i].RelativeBottom=1 
-				api.gadget[i].positionx=GetWindowHeight()-Height-distance
-				setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionY,api.gadget[i].PositionY)
-			endif
-			//if anchor on both ends
-			if api.gadget[i].RelativeLeft=1  and api.gadget[i].RelativeRight=1 
-				api.gadget[i].positionx=1
-				api.gadget[i].WIDth=getwindowwidth()-distance
-				DrawGadget(i,api.gadget[i].kind)
-			endif
+	if api.disable.Relative=0
+		for i = 0 to api.gadget.length
+			screenwidth=0
+			targetIDz=api.gadget[i].Relative.Target
+			x=api.gadget[i].PositionX
+			y=api.gadget[i].PositionY
+			width=api.gadget[i].width
+			height=api.gadget[i].height
 			
-			if api.gadget[i].RelativeTop=1  and api.gadget[i].RelativeBottom=1 -distance
-				api.gadget[i].positionY=distance
-				api.gadget[i].Height=getwindowwidth()
-				DrawGadget(i,api.gadget[i].kind)
+			if TargetIDz > 0
+				`end
+				`TargetID=getid(targetidz) 
+				`if targetid <=api.gadget.length// has target
+					`targetx=Api.gadget[targetid].PositionX
+					`targety=Api.gadget[targetid].PositionY
+					`targetWidth=Api.gadget[targetid].width
+					`targetHeight=Api.gadget[targetid].Height
+					`InOrOutside=Api.gadget[targetid].Relative.InsideOutside
+	
+					`if InOrOutside=1 and targetidz<>0 then distance=(distance+width)*-1
+					
+					`if InOrOutside=0 and targetidz<>-1 then distance=api.gadget[i].Relative.Distance
+					
+					`if api.gadget[i].Relative.L=1
+						`end
+						`futurewidth=   targetx-api.gadget[i].positionx -distance
+						`if futurewidth >5 and API.gadget[targetid].relativeResizeBool=1
+							`api.gadget[i].width=futurewidth -distance
+							`DrawGadget(i,api.gadget[i].kind)
+						`else
+							`api.gadget[i].positionx= targetx-distance-width
+							`SetWindowPositionXY(api.gadget[i].id,api.gadget[i].PositionX,api.gadget[i].PositionY)
+						`endif
+					`endif
+					`if api.gadget[i].RelativeRight=1 
+						`futurewidth=   api.gadget[i].positionx-(targetx+targetwidth+distance) 
+						`if futurewidth >5 and API.gadget[targetid].relativeResizeBool=1
+							`api.gadget[i].width=futurewidth 
+							`api.gadget[i].PositionX=targetx+distance
+							`DrawGadget(i,api.gadget[i].kind)
+						`else
+							`api.gadget[i].positionx=targetx+targetWidth+distance
+							`setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionX,api.gadget[i].PositionY)
+						`endif
+					`endif
+					`if api.gadget[i].RelativeTop=1//top
+						`futureheight=   api.gadget[i].positiony-(targety+targetheight+distance) 
+						`if futureheight >5 and API.gadget[targetid].relativeResizeBool=1
+							`api.gadget[i].height=futureheight 
+							`api.gadget[i].Positiony=targety+distance
+							`DrawGadget(i,api.gadget[i].kind)
+						`else
+							`api.gadget[i].positionY=targetY-distance-height
+							`setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionY,api.gadget[i].PositionY)
+						`endif
+					`endif
+					`if api.gadget[i].RelativeBottom=1//bottom
+						`futureheight=   api.gadget[i].positiony-(targety+targetheight+distance) 
+						`if futureheight >5 and API.gadget[targetid].relativeResizeBool=1
+							`api.gadget[i].height=futureheight 
+							`api.gadget[i].Positiony=targety+distance
+							`DrawGadget(i,api.gadget[i].kind)
+						`else
+							`api.gadget[i].positionx=targetY+targetHeight+distance
+							`setspriteposition(api.gadget[i].SpriteID,api.gadget[i].PositionY,api.gadget[i].PositionY)
+						`endif
+					`endif
+				`endif
 			endif
-		endif
-	next
+			//screen	
+			if targetIDz=0
+				if api.gadget[i].Relative.R.bool=1 and api.gadget[i].Relative.L.bool=0
+					setwindowpositionxy(api.gadget[i].ID,GetWindowWidth() -api.gadget[i].WIDth , api.gadget[i].PositionY)
+				endif
+				if api.gadget[i].Relative.B.bool=1 and api.gadget[i].Relative.T.bool=0
+					setwindowpositionxy(api.gadget[i].ID,api.gadget[i].PositionX,GetWindowHeight()-Height-api.gadget[i].relative.b.distance)
+				endif
+				if api.gadget[i].Relative.T.bool=1 and api.gadget[i].Relative.B.bool=0
+					setwindowpositionxy(api.gadget[i].ID,api.gadget[i].PositionX,api.gadget[i].relative.T.distance)
+				endif
+				if api.gadget[i].Relative.L.bool=1 and api.gadget[i].Relative.r.bool=0
+					setwindowpositionxy(api.gadget[i].ID,api.gadget[i].relative.L.distance,api.gadget[i].PositionY)
+				endif
+				if api.gadget[i].Relative.L.Bool=1  and api.gadget[i].Relative.R.Bool=0//if anchor on both ends L.R
+					api.gadget[i].WIDth=  getwindowwidth()-api.gadget[i].relative.r.distance - api.gadget[i].positionx
+					DrawGadget(i,api.gadget[i].kind)
+				endif
+				if api.gadget[i].Relative.T.bool=1  and api.gadget[i].Relative.B.bool=1 //if anchor on both ends T.B
+					api.gadget[i].Height= (getwindowheight()-api.gadget[i].relative.b.distance) - api.gadget[i].positiony
+					api.gadget[i].positiony=api.gadget[i].relative.t.distance
+					DrawGadget(api.gadget[i].kind,i) 
+				endif
+			endif
+		next
+	endif
 endfunction
 
 

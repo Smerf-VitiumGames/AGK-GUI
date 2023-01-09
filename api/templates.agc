@@ -57,7 +57,7 @@ function MakeColorPicker()
 	SetButtonBgColor(alphabtn,alpha)
 	local ret as integer
 	API.Template.ParentID.insert(colorPickerWindow)
-endfunction 
+endfunction  colorPickerWindow
 
 
 
