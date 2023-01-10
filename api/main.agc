@@ -23,5 +23,5 @@ UseNewDefaultFonts( 1 )
 `ToggleDragEdge()
 do
 	sync()
-	print('wrong one')
+	print('wrong Main file please run main from gui.agk  not api this main is here for development')
 	loop

@@ -115,11 +115,11 @@ function load_gui_1()
 	`AddChild(bborderTextBox,bgwin)
 	
 
-	UpdateGui()
+	UpdateRelative()
 endfunction
 		
 		
-function UpdateGUI()
+function UpdateRelative()
 	RelativePosition()
 	RelativePosition()
 endfunction

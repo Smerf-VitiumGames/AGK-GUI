@@ -7,6 +7,7 @@ function MakeWindow()
 endfunction API.Gadget[ret].ID
 
 
+
 function SetWindowTextSize(ID,value)
 	ID=getID(ID)`return array index
 	if GetWindowExists(ID)=1
@@ -57,7 +58,6 @@ endfunction
 
 
 Function SetWindowPositionXY(ID,x,y)
-
 	ID=getID(ID)`return array index
 	if GetWindowExists(ID)=1
 		oldx=API.Gadget[ID].Positionx
@@ -66,27 +66,18 @@ Function SetWindowPositionXY(ID,x,y)
 		API.Gadget[ID].Positiony=y
 		setspriteposition(API.Gadget[ID].SpriteID,x,y)
 		neg=-1
-		
-		
 		movex=oldx-x
 		movey=oldy-y
-		
-
-	
-			
 		For c = 0 to API.Gadget[ID].Children.length
 			child=getid(api.gadget[id].Children[c])
 			cx=api.gadget[child].PositionX
 			cy=api.gadget[child].PositionY
 			
-
 			api.gadget[child].PositionX=api.gadget[child].PositionX-movex
 			api.gadget[child].Positiony=api.gadget[child].PositionY-movey
 			SetSpritePosition(api.gadget[child].spriteid,api.gadget[child].PositionX,api.gadget[child].Positiony)
 			`sub children
-			
-			
-			
+				
 			For sub = 0 to API.Gadget[child].Children.length
 				subchild=getid(api.gadget[child].Children[sub])
 				subx=api.gadget[subchild].PositionX
@@ -96,29 +87,12 @@ Function SetWindowPositionXY(ID,x,y)
 				api.gadget[subchild].Positiony=api.gadget[subchild].PositionY-movey
 				SetSpritePosition(api.gadget[subchild].spriteid,api.gadget[subchild].PositionX,api.gadget[subchild].Positiony)
 			next
-			
-			
 		next
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		endif
-		
-		
-
-	
-	
+	endif
 endfunction
 
 
 Function setWindowWIDth(ID,wIDth)
-
 	ID=getID(ID)`return array index
 	if GetWindowExists(ID)=1
 		API.Gadget[ID].WIDth=wIDth

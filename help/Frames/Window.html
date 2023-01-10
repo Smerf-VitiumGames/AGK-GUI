@@ -54,43 +54,52 @@ Defaults are not part of the api language because it is much quicker to edit eac
 
 <br>
 <br>
+
 	<b><p class=description>&nbsp GetWindowBgImage(ID)</b> &nbsp  <em> Returns Background ID or -1.</em></p>
 	<b><p class=description>&nbsp GetWindowHeight(ID)</b> &nbsp  <em> Returns Height.</em></p>
 	<b><p class=description>&nbsp GetWindowWidth(ID)</b> &nbsp  <em> Returns Width.</em></p>
+	<b><p class=description>&nbsp GetWindowText(ID)</b> &nbsp  <em> Returns Text String or -1</em></p>
+	<b><p class=description>&nbsp GetWindowY(ID)</b> &nbsp  <em> Returns integer window position x</em></p>
+	<b><p class=description>&nbsp GetWindowX(ID)</b> &nbsp  <em> Returns integer window position y</em></p>
+	
+	<b><p class=description>&nbspSetWindowActivateMode(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1, (1) Enables Hover to activate, "0" Default Behavior</em></p>
+	<b><p class=description>&nbsp SetWindowAlpha(ID,AlphaValue)</b> &nbsp  <em> `Accepts integer 0-255, Sets entire Sprite to the specified alpha value</em></p>
 	<b><p class=description>&nbsp SetWindowBgColor(ID,Color)</b> &nbsp  <em> `Accepts color from makecolor(),Sets Background color of sprite, Accepts Alpha value.</em></p>
 	<b><p class=description>&nbsp SetWindowBGImage(ID,ImageID)</b> &nbsp  <em>  `Accepts Integer, Sets Background image.</em></p>
+	<b><p class=description>&nbsp SetWindowBorderColor(ID,Color)</b> &nbsp  <em>`Accepts color from makecolor(),Sets Border color of sprite, Accepts Alpha value.</em></p>
 	<b><p class=description>&nbsp SetWindowBorderWidth(ID,Width)</b> &nbsp  <em> `Accepts Integer, Sets Border Width.</em></p>
-	<b><p class=description>&nbsp SetWindowDragAndDrop(ID,Bool)</b> &nbsp  <em> ` Accepts Integer 1-0, 1 enalbes Window to be dropped onto other gadgets, 0 false.</em></p>
-	<b><p class=description>&nbsp SetWindowHoverState(ID)</b> &nbsp  <em> Returns 1 if Window is  being hovered,  else 0.</em></p>
-	<b><p class=description>&nbsp SetWindowVisible(ID,Boolean)</b> &nbsp  <em> `Sets Window visible or hidden 1 visible, 0 hidden.</em></p>
-	
-	<b><p class=description>&nbsp GetWindowText(ID)</b> &nbsp  <em> Returns Text String or -1</em></p> 
+	<b><p class=description>&nbsp SetWindowColor(ID,Integer)</b> &nbsp  <em> `Accepts color from makecolor(), Sets entire sprite to specified color.</em></p>
 	<b><p class=description>&nbsp SetWindowDepth(ID,Depth)</b> &nbsp  <em> Accepts Integer, Forces Window to add or subtract depth to its depth sorting.</em></p>
+	<b><p class=description>&nbsp SetWindowDrag(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Dragging</em></p>
+	<b><p class=description>&nbsp SetWindowDragAndDrop(ID,Bool)</b> &nbsp  <em> ` Accepts Integer 1-0, 1 enalbes Window to be dropped onto other gadgets, 0 false.</em></p>
+	<b><p class=description>&nbsp SetWindowEditMode(ID,Bool)</b> &nbsp  <em>	`Accepts Integer 1-0, overides settings enables all api features,"Window action will be disabled while in edit mode</em></p>
+	<b><p class=description>&nbsp SetWindowHoverState(ID)</b> &nbsp  <em> Returns 1 if Window is  being hovered,  else 0.</em></p>
 	<b><p class=description>&nbsp SetWindowHeight(ID,Height)</b> &nbsp  <em> `Accepts integer sets the height.</em></p>
-	<b><p class=description>&nbsp SetWindowWidth(ID,Width)</b> &nbsp  <em> Accepts integer sets the width.</em></p>
-	<b><p class=description>&nbsp SetWindowSize(ID,Width,Height)</b> &nbsp  <em> Accepts integer sets the width and height.</em></p>
+	<b><p class=description>&nbsp SetWindowHighlight(ID,Bool)</b> &nbsp  <em> `Accepts Integer 1-0, Enables Highlighting</em></p>
+
 	<b><p class=description>&nbsp SetWindowPaddingWidth(ID,Width)</b> &nbsp  <em> `Accepts Integer, Sets Padding Width.</em></p>
 	<b><p class=description>&nbsp SetWindowPaddingColor(ID,Color)</b> &nbsp  <em>`Accepts color from makecolor(),Sets Padding color of sprite, Accepts Alpha value.</em></p>
-	<b><p class=description>&nbsp SetWindowBorderColor(ID,Color)</b> &nbsp  <em>`Accepts color from makecolor(),Sets Border color of sprite, Accepts Alpha value.</em></p>
-	<b><p class=description>&nbsp SetWindowColor(ID,Integer)</b> &nbsp  <em> `Accepts color from makecolor(), Sets entire sprite to specified color.</em></p>
-	<b><p class=description>&nbsp SetWindowAlpha(ID,AlphaValue)</b> &nbsp  <em> `Accepts integer 0-255, Sets entire Sprite to the specified alpha value</em></p>
-	<b><p class=description>&nbsp SetWindowEditMode(ID,Bool)</b> &nbsp  <em>	`Accepts Integer 1-0, overides settings enables all api features,"Window action will be disabled while in edit mode"</em></p>
-	<b><p class=description>&nbsp SetWindowToolTip(ID,String)</b> &nbsp  <em> Accepts String, Sets Window to generate and destroy a tooltip preview on hover.
-								Hover Must be enabled see SetWindowActivateHover(ID,Bool)</em></p>
-	<b><p class=description>&nbsp SetWindowDrag(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Dragging</em></p>
-	<b><p class=description>&nbsp SetWindowResize(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Resizing</em></p>
-	<b><p class=description>&nbspSetWindowActivateMode(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1, (1) Enables Hover to activate, "0"
-									Default Behavior</em></p>
-	<b><p class=description>&nbsp SetWindowHighlight(ID,Bool)</b> &nbsp  <em> `Accepts Integer 1-0, Enables Highlighting</em></p>
+	<b><p class=description>&nbsp SetWindowPositionXY(ID,x,y)</b> &nbsp  <em>`accepts 2 integers, sets windows position.</em></p>
 	<b><p class=description>&nbsp SetWindowRelative(id,left_Top_Right_Bottom$,on_off,distanceToTarget,targetID_zeroForWindow,insideOrOutide,resizeBool)</b><br> &nbsp <em> <br>
 	&nbsp This command sets a gadget relative to another gadget, if movement or resising of the target gadget occurs this gadget will move in <br>
 	&nbsprelation to it with a dsignated spacing. Usage: id of gadget, relitive position ,turn this feature on or off, distance to maintain between its target,<br> 
 	&nbspthe id of the target gadget  "use zero for the main window",  inside or outside inside=0,outside=1, this will bind the gadget to the outide border or the <br>
 	&nbspinside border of the target. resizebool 0 off 1 on. resizebool resizes the target gadget and does not reposition it.  this is useful for rearanging<br>
 	&nbspmenus to make space  on a window or expanding an area.
-	
-	
 	</em></p>
+	<b><p class=description>&nbsp SetWindowResize(ID,Bool)</b> &nbsp  <em> `Accepts integer 0-1,Enables Resizing</em></p>
+	<b><p class=description>&nbsp SetWindowSize(ID,Width,Height)</b> &nbsp  <em> Accepts integer sets the width and height.</em></p>
+	<b><p class=description>&nbsp SetWindowToolTip(ID,String)</b> &nbsp  <em> Accepts String, Sets Window to generate and destroy a tooltip preview on hover.
+	Hover Must be enabled see SetWindowActivateHover(ID,Bool)</em></p>
+	<b><p class=description>&nbsp SetWindowVisible(ID,Boolean)</b> &nbsp  <em> `Sets Window visible or hidden 1 visible, 0 hidden.</em></p>
+	<b><p class=description>&nbsp SetWindowWidth(ID,Width)</b> &nbsp  <em> Accepts integer sets the width.</em></p>
+
+	
+
+
+	
+
+
 
 </div>
 </div></center>

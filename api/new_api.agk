@@ -86,18 +86,18 @@ FILE_NAME_7=0;Command_Divider.agc;160;7
 FILE_NAME_8=0;Command_Label.agc;18;8
 FILE_NAME_9=0;Command_Slider.agc;55;9
 FILE_NAME_10=0;Command_TextBox.agc;0;10
-FILE_NAME_11=0;Command_Window.agc;222;11
+FILE_NAME_11=1;Command_Window.agc;7;11
 FILE_NAME_12=0;DEFAULTS.agc;91;12
 FILE_NAME_13=0;DropMenu.agc;35;13
 FILE_NAME_14=0;Gadget_Build.agc;102;14
 FILE_NAME_15=0;Gadget_DragEdge.agc;77;15
-FILE_NAME_16=0;Gadget_Handel.agc;84;16
+FILE_NAME_16=0;Gadget_Handel.agc;27;16
 FILE_NAME_17=0;Gadget_Scroll.agc;18;17
 FILE_NAME_18=0;Gadget_TextBox.agc;42;18
-FILE_NAME_19=0;INIT_Main.agc;206;19
-FILE_NAME_20=0;main.agc;26;20
+FILE_NAME_19=0;INIT_Main.agc;214;19
+FILE_NAME_20=0;main.agc;25;20
 FILE_NAME_21=0;system.agc;63;21
-FILE_NAME_22=0;templates.agc;50;22
+FILE_NAME_22=0;templates.agc;61;22
 FILE_NAME_23=0;test_GUI.agc;121;23
 
 [watchvariables]
