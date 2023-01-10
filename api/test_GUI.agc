@@ -119,7 +119,7 @@ function load_gui_1()
 endfunction
 		
 		
-function UpdateGUI
+function UpdateGUI()
 	RelativePosition()
 	RelativePosition()
 endfunction
